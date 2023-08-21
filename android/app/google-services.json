@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "420400641953",
+    "project_id": "becca-apps",
+    "storage_bucket": "becca-apps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420400641953:android:a9d06246957b05c338bde0",
+        "android_client_info": {
+          "package_name": "com.qqltech.becca_sales"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420400641953-r0spkgtbceevgn6kfpomthl66470tceo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOE0MgtZt1ueVyvE7KcrlWsWXMHgLqZlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420400641953-r0spkgtbceevgn6kfpomthl66470tceo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:420400641953:android:0bf8f6dd4d669a2638bde0",
+        "android_client_info": {
+          "package_name": "com.qqltech.becca_supir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "420400641953-r0spkgtbceevgn6kfpomthl66470tceo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDOE0MgtZt1ueVyvE7KcrlWsWXMHgLqZlI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "420400641953-r0spkgtbceevgn6kfpomthl66470tceo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
