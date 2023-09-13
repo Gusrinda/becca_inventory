@@ -563,6 +563,9 @@ class $AssetsMaterialGen {
   /// File path: assets/material/home.svg
   String get home => 'assets/material/home.svg';
 
+  /// File path: assets/material/image 22.svg
+  String get image22 => 'assets/material/image 22.svg';
+
   /// File path: assets/material/lock.svg
   String get lock => 'assets/material/lock.svg';
 
@@ -599,6 +602,7 @@ class $AssetsMaterialGen {
         edit,
         eye,
         home,
+        image22,
         lock,
         login,
         logout,
