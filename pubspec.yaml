@@ -101,8 +101,6 @@ flutter:
   assets:
     - assets/icons/
     - assets/images/
-    - assets/material/
-    - assets/BgOrange.png
 
 flutter_gen:
   output: lib/src/core/assets

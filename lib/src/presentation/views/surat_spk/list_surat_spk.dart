@@ -23,7 +23,7 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
     return Scaffold(
       appBar: AppBar(
         title: Text("List Delivery Order"),
-        centerTitle: true,
+        centerTitle: false,
         actions: [
           // Padding(
           //   padding: const EdgeInsets.symmetric(vertical: 10),
@@ -63,14 +63,6 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Text(
-              "Semua",
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-            ),
-          ),
           SizedBox(
             height: 20,
           ),
@@ -81,7 +73,7 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
                 itemCount: 3,
                 itemBuilder: (BuildContext c, int index) {
                   return CardListSuratJalan(
-                    index: index * 2 + 1,
+                    index: index + 1,
                     onTap: () {
                       if (index.isOdd) {
                         Navigator.pushNamed(
