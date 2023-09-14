@@ -284,7 +284,11 @@ class _FormInputPassword extends StatelessWidget {
                 child: !state.obscurePassword
                     ? Container(
                         padding: EdgeInsets.all(12),
-                        child: SvgPicture.asset(Assets.material.eye))
+                        child: SvgPicture.asset(
+                          Assets.material.eye,
+                          colorFilter:
+                              ColorFilter.mode(themeRed2, BlendMode.srcIn),
+                        ))
                     // const Icon(
                     //   Icons.visibility_outlined,
                     //   color: themeOrange,
