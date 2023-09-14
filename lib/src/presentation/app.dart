@@ -1,4 +1,3 @@
-
 import 'package:becca_supir/src/presentation/settings/settings_controller.dart';
 import 'package:becca_supir/src/presentation/views/auth/login_page.dart';
 import 'package:becca_supir/src/presentation/views/home/dashboard.dart';
@@ -36,29 +35,22 @@ class _MyAppState extends State<MyApp> {
             debugShowCheckedModeBanner: false,
             title: 'Becca Sales',
             theme: ThemeData(
-              primarySwatch: Colors.blue,
-              scaffoldBackgroundColor: Colors.white,
-              textTheme: GoogleFonts.poppinsTextTheme(
-                Theme.of(context).textTheme
-              ),
-              appBarTheme: AppBarTheme(
-                elevation: 0,
-                color: Colors.white,
-                iconTheme: IconThemeData(color: themeOrange),
-                titleTextStyle: GoogleFonts.poppins(
-                    fontWeight: FontWeight.w500,
-                    color: Colors.black,
-                    fontSize: 16.sp
-
-                )
-              )
-            ),
+                primarySwatch: Colors.blue,
+                scaffoldBackgroundColor: Colors.white,
+                textTheme:
+                    GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme),
+                appBarTheme: AppBarTheme(
+                    elevation: 0,
+                    color: Colors.white,
+                    iconTheme: IconThemeData(color: themeRed2),
+                    titleTextStyle: GoogleFonts.poppins(
+                        fontWeight: FontWeight.w500,
+                        color: Colors.black,
+                        fontSize: 16.sp))),
             navigatorKey: navigatorKey,
             // initialRoute: Navigator.defaultRouteName,
             onGenerateRoute: AppRoute.onGenerateRoute,
-            builder: EasyLoading.init(
-              builder: _builder
-            ),
+            builder: EasyLoading.init(builder: _builder),
           );
 
           final settingsController = context.read<SettingsController>();
@@ -92,13 +84,12 @@ class _MyAppState extends State<MyApp> {
 
   Widget _builder(BuildContext context, Widget? child) {
     return BlocListener<AuthBloc, AuthenticationState>(
-      listenWhen: (previous, current) => previous.status != current.status,
-      listener: (context, state) {
-        debugPrint('APP : ${state.toString()}');
-        _listeningToAuthenticationStatus(context, state.status);
-      },
-      child: child
-    );
+        listenWhen: (previous, current) => previous.status != current.status,
+        listener: (context, state) {
+          debugPrint('APP : ${state.toString()}');
+          _listeningToAuthenticationStatus(context, state.status);
+        },
+        child: child);
   }
 
   _listeningToAuthenticationStatus(
@@ -117,7 +108,7 @@ class _MyAppState extends State<MyApp> {
         case AuthenticationStatus.unauthenticated:
           _navigator.pushNamedAndRemoveUntil(
             LoginPage.routeName,
-                (route) => false,
+            (route) => false,
           );
           break;
         case AuthenticationStatus.authenticated:
@@ -125,25 +116,24 @@ class _MyAppState extends State<MyApp> {
 
           _navigator.pushNamedAndRemoveUntil(
             DashboardPage.routeName,
-                (route) => false,
+            (route) => false,
           );
           break;
         case AuthenticationStatus.verification:
-        // print("MASUK SINI");
-        // UserModel userModel = bloc!.state.userModel!;
-        //
-        // print("BERHASIL USER MODEL !");
-        //
-        // _navigator.pushNamedAndRemoveUntil(
-        //   OTPPage.routeName,
-        //   arguments: userModel.phone!,
-        //       (route) => false,
-        // );
+          // print("MASUK SINI");
+          // UserModel userModel = bloc!.state.userModel!;
+          //
+          // print("BERHASIL USER MODEL !");
+          //
+          // _navigator.pushNamedAndRemoveUntil(
+          //   OTPPage.routeName,
+          //   arguments: userModel.phone!,
+          //       (route) => false,
+          // );
           break;
         case AuthenticationStatus.me:
           break;
       }
-
     } catch (e) {
       print("ERROR INI : " + e.toString());
     }

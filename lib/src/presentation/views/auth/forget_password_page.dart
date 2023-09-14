@@ -44,10 +44,8 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
               hintText: "Masukkan email terdaftar",
             ),
           ),
-          Expanded(
-              flex: 1,
-              child: SizedBox())
-        ,  SafeArea(
+          Expanded(flex: 1, child: SizedBox()),
+          SafeArea(
               minimum: EdgeInsets.only(bottom: 48, left: 32, right: 32),
               child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -69,7 +67,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                           fontWeight: FontWeight.w600),
                     ),
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: themeOrangeBg,
+                        backgroundColor: themeRedButton,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         padding: EdgeInsets.symmetric(vertical: 12)),
@@ -78,7 +76,6 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
       ),
     );
   }
-
 
   Future<bool?> handleFormSubmit(BuildContext context) async {
     return await showDialog(
@@ -120,7 +117,7 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                           backgroundColor: ThemeColors.neutral4,
                         ),
                         child: Padding(
@@ -142,11 +139,11 @@ class _ForgetPasswordPageState extends State<ForgetPasswordPage> {
                           Navigator.pop(context, true);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: themeOrangeBg,
+                          backgroundColor: themeRedButton,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(16),

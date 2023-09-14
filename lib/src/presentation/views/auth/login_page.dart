@@ -127,7 +127,7 @@ class _LoginPageState extends State<LoginPage> {
               flightShuttleBuilder: flightShuttleBuilder,
               child: FormTextLabel(
                 label: "Email",
-                labelColor: ThemeColors.navy6,
+                labelColor: themeFontLight,
               ),
             ),
             const SizedBox(
@@ -143,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
               flightShuttleBuilder: flightShuttleBuilder,
               child: FormTextLabel(
                 label: "Password",
-                labelColor: ThemeColors.navy6,
+                labelColor: themeFontLight,
               ),
             ),
             const SizedBox(
@@ -165,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                     "Forget Password?",
                     style: TextStyle(
                         fontSize: 12.sp,
-                        color: themeOrange,
+                        color: themeRed2,
                         decoration: TextDecoration.underline),
                   ),
                 ),
@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Ink(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: const BoxDecoration(
-                        color: themeOrange,
+                        color: themeRedButton,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: const Center(
                       child: Text(
@@ -219,11 +219,11 @@ class _LoginPageState extends State<LoginPage> {
               child: Text.rich(
                 TextSpan(
                   children: [
-                    TextSpan(text: "Belum punya akun ?  "),
+                    TextSpan(text: "Belum punya akun?  "),
                     TextSpan(
                       text: "Register",
                       style: const TextStyle(
-                        color: themeOrange,
+                        color: themeRed2,
                         fontWeight: FontWeight.w500,
                       ),
                       recognizer: TapGestureRecognizer()
@@ -278,7 +278,7 @@ class _FormInputPassword extends StatelessWidget {
             color: Colors.transparent,
             // ignore: prefer_const_constructors
             child: FormzTextField(
-              hintText: "Input password",
+              hintText: "masukkan password",
               textEditingController: state.fieldPassword.textEditingController,
               trailing: GestureDetector(
                 child: !state.obscurePassword
@@ -294,7 +294,7 @@ class _FormInputPassword extends StatelessWidget {
                         child: SvgPicture.asset(
                           Assets.material.eye,
                           colorFilter:
-                              ColorFilter.mode(Colors.blue, BlendMode.srcIn),
+                              ColorFilter.mode(themeRed2, BlendMode.srcIn),
                         )),
                 onTap: () => context
                     .read<LoginBloc>()
@@ -337,7 +337,7 @@ class _FormInputEmail extends StatelessWidget {
             // ignore: prefer_const_constructors
             child: FormzTextField(
               textEditingController: state.fieldUsername.textEditingController,
-              hintText: "Input registered email",
+              hintText: "masukkan email",
               keyboardType: TextInputType.emailAddress,
               textInputAction: TextInputAction.next,
               onChanged: (email) =>

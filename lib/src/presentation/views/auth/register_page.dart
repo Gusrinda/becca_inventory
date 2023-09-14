@@ -31,18 +31,12 @@ class _RegisterPageState extends State<RegisterPage> {
             "Register",
             textAlign: TextAlign.center,
             style: TextStyle(
-              color: Colors.black,
-              fontSize: 20,
-              fontWeight: FontWeight.w600
-            ),
+                color: Colors.black, fontSize: 20, fontWeight: FontWeight.w600),
           ),
           Text(
             "Buat akun baru",
             textAlign: TextAlign.center,
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 12
-            ),
+            style: TextStyle(color: Colors.black, fontSize: 12),
           ),
           Expanded(
             flex: 1,
@@ -70,7 +64,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
                       hintText: "masukkan nama lengkap",
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
@@ -101,8 +94,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
-                      hintText: "masukkan id pegawai",
+                      hintText: "masukkan nomor ID pegawai",
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
                       textInputAction: TextInputAction.next,
@@ -132,13 +124,12 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
                       hintText: "pilih area",
                       trailing: Padding(
                         padding: const EdgeInsets.all(12.0),
                         child: Icon(
                           Icons.keyboard_arrow_down_rounded,
-                          color: themeOrange,
+                          color: themeRed2,
                         ),
                       ),
                       onTap: () {},
@@ -170,8 +161,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
-                      hintText: "masukkan email anda",
+                      hintText: "masukkan email",
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
                       textInputAction: TextInputAction.next,
@@ -186,7 +176,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   tag: 'Label-RegisterPhone',
                   flightShuttleBuilder: flightShuttleBuilder,
                   child: FormTextLabel(
-                    label: "Nama",
+                    label: "No. HP",
                     labelColor: themeFontDefault,
                   ),
                 ),
@@ -201,8 +191,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
-                      hintText: "masukkan nomor telfon anda",
+                      hintText: "masukkan no. HP",
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
                       textInputAction: TextInputAction.next,
@@ -232,12 +221,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
                       hintText: "masukkan password",
                       obscureText: true,
                       trailing: Container(
                           padding: EdgeInsets.all(12),
-                          child: SvgPicture.asset(Assets.material.eye)),
+                          child: SvgPicture.asset(
+                            Assets.material.eye,
+                            colorFilter:
+                                ColorFilter.mode(themeRed2, BlendMode.srcIn),
+                          )),
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
                       textInputAction: TextInputAction.next,
@@ -267,12 +259,15 @@ class _RegisterPageState extends State<RegisterPage> {
                     color: Colors.transparent,
                     // ignore: prefer_const_constructors
                     child: FormzTextField(
-
-                      hintText: "masukkan kembali password",
+                      hintText: "masukkan ulang password",
                       obscureText: true,
-                      trailing:Container(
+                      trailing: Container(
                           padding: EdgeInsets.all(12),
-                          child: SvgPicture.asset(Assets.material.eye)),
+                          child: SvgPicture.asset(
+                            Assets.material.eye,
+                            colorFilter:
+                                ColorFilter.mode(themeRed2, BlendMode.srcIn),
+                          )),
                       onTap: () {},
                       textEditingController: TextEditingController(text: null),
                       textInputAction: TextInputAction.next,
@@ -284,7 +279,6 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ],
             ),
-            
           ),
           SafeArea(
               minimum: EdgeInsets.only(bottom: 32, left: 32, right: 32),
@@ -298,7 +292,8 @@ class _RegisterPageState extends State<RegisterPage> {
 
                           if (isOke != null) {
                             if (isOke) {
-                              Navigator.popAndPushNamed(context, OTPPage.routeName);
+                              Navigator.popAndPushNamed(
+                                  context, OTPPage.routeName);
                             }
                           }
                         },
@@ -310,12 +305,14 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontWeight: FontWeight.w700),
                         ),
                         style: OutlinedButton.styleFrom(
-                            backgroundColor: themeOrangeBg,
+                            backgroundColor: themeRedButton,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(30)),
                             padding: EdgeInsets.symmetric(vertical: 8)),
                       )),
-                  SizedBox(height: 8,),
+                  SizedBox(
+                    height: 8,
+                  ),
                   Hero(
                     tag: 'Form-Footer',
                     flightShuttleBuilder: flightShuttleBuilder,
@@ -326,7 +323,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           TextSpan(
                             text: "Login",
                             style: const TextStyle(
-                              color: themeOrange,
+                              color: themeNavy,
                               fontWeight: FontWeight.w500,
                             ),
                             recognizer: TapGestureRecognizer()
@@ -346,7 +343,6 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
   }
-
 
   Future<bool?> handleFormSubmit(BuildContext context) async {
     return await showDialog(
@@ -388,7 +384,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                           backgroundColor: ThemeColors.neutral4,
                         ),
                         child: Padding(
@@ -410,11 +406,11 @@ class _RegisterPageState extends State<RegisterPage> {
                           Navigator.pop(context, true);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: themeOrangeBg,
+                          backgroundColor: themeRedButton,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(16),
