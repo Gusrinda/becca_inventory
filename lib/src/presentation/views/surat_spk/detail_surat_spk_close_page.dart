@@ -147,7 +147,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Image(image: AssetImage(Assets.images.confirmation.path)),
+                Image(image: AssetImage(Assets.images.confirmation2.path)),
                 const SizedBox(height: 16),
                 const SizedBox(
                   height: 4,

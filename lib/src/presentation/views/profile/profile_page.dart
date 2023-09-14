@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
               color: themeOrangeBg,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage("assets/BgOrange.png"),
+                image: AssetImage(Assets.images.bgOrangeInv.path),
               ),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -210,7 +210,7 @@ class ButtonLogout extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             height: 16,
             width: 16,
-            child: SvgPicture.asset(Assets.material.logout),
+            child: SvgPicture.asset(Assets.material.logoutInv),
           ),
           onTap: onTap,
           enabled: true,
@@ -242,7 +242,7 @@ class FormInputNewPasswordConfirmation extends StatelessWidget {
         child: FormzUnderlineTextField(
           leading: Padding(
             padding: const EdgeInsets.all(12),
-            child: SvgPicture.asset(Assets.material.lock),
+            child: SvgPicture.asset(Assets.material.lockInv),
           ),
           enabled: true,
           obscureText: true,
@@ -298,13 +298,13 @@ class FormInputNewPassword extends StatelessWidget {
         child: FormzUnderlineTextField(
           leading: Padding(
             padding: const EdgeInsets.all(12),
-            child: SvgPicture.asset(Assets.material.lock),
+            child: SvgPicture.asset(Assets.material.lockInv),
           ),
           trailing: GestureDetector(
             child: Padding(
               padding: const EdgeInsets.all(12),
               child: SvgPicture.asset(
-                Assets.material.edit,
+                Assets.material.editInv,
                 colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
               ),
             ),
@@ -341,7 +341,7 @@ class FormInputPhoneProfile extends StatelessWidget {
           trailing: Padding(
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
-              Assets.material.edit,
+              Assets.material.editInv,
               colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
@@ -350,7 +350,7 @@ class FormInputPhoneProfile extends StatelessWidget {
             height: 16,
             width: 16,
             child: SvgPicture.asset(
-              Assets.material.phone,
+              Assets.material.phoneInv,
             ),
           ),
           enabled: true,
@@ -386,7 +386,7 @@ class FormInputEmailProfile extends StatelessWidget {
           trailing: Padding(
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
-              Assets.material.edit,
+              Assets.material.editInv,
               colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
@@ -395,7 +395,7 @@ class FormInputEmailProfile extends StatelessWidget {
             height: 16,
             width: 16,
             child: SvgPicture.asset(
-              Assets.material.mail,
+              Assets.material.messageInv,
             ),
           ),
           autofocus: false,
@@ -433,7 +433,7 @@ class FormInputUserProfile extends StatelessWidget {
           trailing: Padding(
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
-              Assets.material.edit,
+              Assets.material.editInv,
               colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
@@ -442,7 +442,9 @@ class FormInputUserProfile extends StatelessWidget {
             height: 16,
             width: 16,
             child: SvgPicture.asset(
-              Assets.material.user,
+              Assets.material.userInv,
+              colorFilter:
+                  const ColorFilter.mode(Colors.redAccent, BlendMode.srcIn),
             ),
           ),
           autofocus: false,
