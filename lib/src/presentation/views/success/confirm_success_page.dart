@@ -8,6 +8,7 @@ import 'package:flutter_svg/svg.dart';
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/config/theme_colors.dart';
 
+
 class ConfirmSuccessPage extends StatefulWidget {
   static const String routeName = '/confirm_success_page';
   const ConfirmSuccessPage({super.key, this.textBerhasil});

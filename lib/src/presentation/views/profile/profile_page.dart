@@ -31,7 +31,7 @@ class _ProfilePageState extends State<ProfilePage> {
               color: themeOrangeBg,
               image: DecorationImage(
                 fit: BoxFit.cover,
-                image: AssetImage(Assets.images.bgOrensbaru.path),
+                image: AssetImage("assets/BgOrange.png"),
               ),
             ),
             padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -443,8 +443,6 @@ class FormInputUserProfile extends StatelessWidget {
             width: 16,
             child: SvgPicture.asset(
               Assets.material.user,
-              colorFilter:
-                  const ColorFilter.mode(Colors.redAccent, BlendMode.srcIn),
             ),
           ),
           autofocus: false,
