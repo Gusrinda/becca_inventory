@@ -22,33 +22,33 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Riwayat Delivery Order"),
-        centerTitle: true,
-        actions: [
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            child: InkWell(
-              onTap: () async {
-                final filterBy = await HandleShowModalForm();
+        title: const Text("List SPK"),
+        centerTitle: false,
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.symmetric(vertical: 10),
+        //     child: InkWell(
+        //       onTap: () async {
+        //         final filterBy = await HandleShowModalForm();
 
-                print("FILTER BY => $filterBy");
-              },
-              child: ClipRRect(
-                  borderRadius: BorderRadius.circular(60),
-                  child: Container(
-                      width: 36,
-                      height: 36,
-                      color: themeOrangeBg,
-                      child: Icon(
-                        CupertinoIcons.sort_up,
-                        color: Colors.white,
-                      ))),
-            ),
-          ),
-          SizedBox(
-            width: 20,
-          )
-        ],
+        //         print("FILTER BY => $filterBy");
+        //       },
+        //       child: ClipRRect(
+        //           borderRadius: BorderRadius.circular(60),
+        //           child: Container(
+        //               width: 36,
+        //               height: 36,
+        //               color: themeOrangeBg,
+        //               child: Icon(
+        //                 CupertinoIcons.sort_up,
+        //                 color: Colors.white,
+        //               ))),
+        //     ),
+        //   ),
+        //   SizedBox(
+        //     width: 20,
+        //   )
+        // ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -63,26 +63,15 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
           const SizedBox(
             height: 20,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 32),
-            child: Text(
-              "Semua",
-              style:
-                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
-            ),
-          ),
-          SizedBox(
-            height: 20,
-          ),
           Expanded(
             flex: 1,
             child: ListView.builder(
                 shrinkWrap: true, //MUST TO ADDED
                 //MUST TO ADDED
-                itemCount: 3,
+                itemCount: 6,
                 itemBuilder: (BuildContext c, int index) {
                   return CardListSuratJalan(
-                    index: index * 2 + 1,
+                    index: index * 1 + 1,
                     onTap: () {
                       Navigator.pushNamed(
                           context, DetailSuratJalanClose.routeName);
@@ -114,8 +103,8 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
           width: MediaQuery.of(context).size.width,
           child: Wrap(
             children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(vertical: 20),
+              const Padding(
+                padding: EdgeInsets.symmetric(vertical: 20),
                 child: Row(
                   children: [
                     Text(
@@ -133,7 +122,7 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 12,
               ),
               Center(
@@ -155,14 +144,14 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
                           valueListenable: rxPickup,
                           builder: (context, groupValue, child) {
                             return RadioListTile(
-                              contentPadding: EdgeInsets.all(0),
+                              contentPadding: const EdgeInsets.all(0),
                               value: pickup,
                               activeColor: themeOrange,
                               groupValue: groupValue,
                               onChanged: (value) => rxPickup.value = value!,
                               title: Text(
                                 pickup,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     fontSize: 14,
                                     fontWeight: FontWeight.w400,
                                     color: themeBlack),
@@ -217,27 +206,40 @@ class CardListSuratJalan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color containerColor;
+
+    switch (index) {
+      case 4:
+        containerColor = Colors.green;
+        break;
+      case 5:
+        containerColor = Colors.green;
+        break;
+      case 6:
+        containerColor = Colors.red;
+        break;
+      default:
+        containerColor = Colors.grey;
+        break;
+    }
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        margin: EdgeInsets.only(left: 30, right: 30, bottom: 18),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(color: Color(0xFFDDDDDD))),
-        padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
+        margin: const EdgeInsets.only(left: 30, right: 30, bottom: 2),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         child: Row(
           children: [
             Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE), shape: BoxShape.circle),
-              padding: EdgeInsets.all(20),
-              child: FaIcon(
+              decoration: const BoxDecoration(
+                  color: Colors.redAccent, shape: BoxShape.circle),
+              padding: const EdgeInsets.all(10),
+              child: const FaIcon(
                 FontAwesomeIcons.wpforms,
-                color: Colors.grey,
-                size: 24,
+                color: Colors.white,
+                size: 17,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 12,
             ),
             Expanded(
@@ -246,51 +248,33 @@ class CardListSuratJalan extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "PT. ABADI SENTOSA",
+                    "SPK-00${index}",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.w600),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 4,
                   ),
                   Text(
-                    "Jl. Rajawali VI no 114 Surabaya",
-                    maxLines: 1,
+                    "0${index} Mei 2023",
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        color: Colors.black,
+                    style: const TextStyle(
+                        color: Colors.grey,
                         fontSize: 12,
                         fontWeight: FontWeight.w400),
                   ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "Jumlah SJ : ${index}",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400),
-                  ),
-                  SizedBox(
-                    height: 4,
-                  ),
-                  Text(
-                    "11/06/2023",
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
-                        fontWeight: FontWeight.w400),
-                  )
                 ],
               ),
-            )
+            ),
+            Container(
+              padding: EdgeInsets.all(6),
+              decoration:
+                  BoxDecoration(color: containerColor, shape: BoxShape.circle),
+            ),
           ],
         ),
       ),

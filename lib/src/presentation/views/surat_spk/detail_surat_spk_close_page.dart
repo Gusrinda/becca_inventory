@@ -22,102 +22,67 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Detail Delivery Order"),
+        title: const Text("Detail SPK"),
       ),
       body: Container(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
-            Row(
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                    flex: 40,
-                    child: Text(
-                      "No Delivery Plan",
-                      style: TextStyle(color: fontColorThin),
-                    )),
-                Expanded(
-                    flex: 60,
-                    child: Text(
-                      "DP-001",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    )),
+                Text(
+                  "No. SPK",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                Text(
+                  "Tanggal",
+                  style: TextStyle(color: Colors.grey),
+                )
               ],
             ),
-            SizedBox(
-              height: 6,
+            const SizedBox(
+              height: 2,
             ),
-            Row(
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text("SPK-001"), Text("28 April 2023")],
+            ),
+            const SizedBox(
+              height: 12,
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(
-                    flex: 40,
-                    child: Text(
-                      "Tanggal",
-                      style: TextStyle(color: fontColorThin),
-                    )),
-                Expanded(
-                    flex: 60,
-                    child: Text(
-                      "04/04/2023",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    )),
+                Text(
+                  "Depo",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                Text(
+                  "Gudang",
+                  style: TextStyle(color: Colors.grey),
+                )
               ],
             ),
-            SizedBox(
-              height: 6,
+            const SizedBox(
+              height: 2,
             ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 40,
-                    child: Text(
-                      "Customer",
-                      style: TextStyle(color: fontColorThin),
-                    )),
-                Expanded(
-                    flex: 60,
-                    child: Text(
-                      "PT. Hutama Karya",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    )),
-              ],
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [Text("WH-001"), Text("Gudang A")],
             ),
-            SizedBox(
-              height: 6,
-            ),
-            Row(
-              children: [
-                Expanded(
-                    flex: 40,
-                    child: Text(
-                      "Alamat",
-                      style: TextStyle(color: fontColorThin),
-                    )),
-                Expanded(
-                    flex: 60,
-                    child: Text(
-                      "Jl. Candi Lontar II No. 48 B",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
-                    )),
-              ],
-            ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
-            Divider(
-              thickness: 1,
-              color: Colors.grey,
+            const Text(
+              "Detail Item",
+              style: TextStyle(color: Colors.redAccent),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             Expanded(
@@ -125,10 +90,10 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
               child: ListView.builder(
                   shrinkWrap: true, //MUST TO ADDED
                   //MUST TO ADDED
-                  itemCount: 4,
+                  itemCount: 6,
                   itemBuilder: (BuildContext c, int index) {
                     return CardListDO(
-                      index: index,
+                      index: index * 1 + 1,
                     );
                   }),
             ),
@@ -138,19 +103,22 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   onPressed: () async {
-                    Navigator.pop(context);
+                    bool? result = await handleFormSubmit(context);
+                    if (result != null && result) {
+                      Navigator.pop(context);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFEEEEEE),
+                      backgroundColor: Colors.redAccent,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30))),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 16),
+                  child: const Padding(
+                    padding: EdgeInsets.symmetric(vertical: 10),
                     child: Text(
-                      "Kembali",
+                      "Submit",
                       style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black,
+                          color: Colors.white,
                           fontWeight: FontWeight.w600),
                     ),
                   ),
@@ -185,7 +153,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                   height: 4,
                 ),
                 const Text(
-                  "Apakah anda yakin untuk check in ?",
+                  "Apakah anda yakin  ?",
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -201,14 +169,14 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                         onPressed: () => Navigator.pop(context, false),
                         style: ElevatedButton.styleFrom(
                           elevation: 0,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                           backgroundColor: ThemeColors.neutral4,
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: const Text(
+                        child: const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text(
                             'Cancel',
                             style: TextStyle(
                                 fontSize: 12,
@@ -225,15 +193,15 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                           Navigator.pop(context, true);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: themeOrangeBg,
+                          backgroundColor: Colors.redAccent,
                           elevation: 0,
-                          shape: RoundedRectangleBorder(
+                          shape: const RoundedRectangleBorder(
                               borderRadius:
                                   BorderRadius.all(Radius.circular(20))),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(16),
-                          child: const Text('Yes',
+                        child: const Padding(
+                          padding: EdgeInsets.all(16),
+                          child: Text('Yes',
                               style: TextStyle(
                                   fontSize: 12,
                                   fontWeight: FontWeight.w400,
@@ -262,56 +230,110 @@ class CardListDO extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _random = new Random();
-    var _diceface = _random.nextInt(4) + 1;
+    Color containerColor;
 
-    List<String> sub = [
-      "SUB",
-      "PARALON",
-      "OK",
-      "TEST",
-      "YEZ",
-      "NUTZ",
-      "SUGAR",
-      "COPI"
-    ];
+    switch (index % 2) {
+      case 0:
+        containerColor = Colors.white;
+        break;
+      case 1:
+        containerColor = Color(0xffE1E0E0);
+        break;
+      default:
+        containerColor = Colors.grey;
+        break;
+    }
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
-      child: Column(
+      margin: const EdgeInsets.only(bottom: 0),
+      decoration: BoxDecoration(
+        color: containerColor,
+      ),
+      child: Row(
         children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF5F5F5)),
-            child: Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Text(
-                      "SJ-00${index + 1}",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w700),
-                    )),
-                Text(sub[_diceface])
-              ],
+          Expanded(
+            // Widget Expanded untuk membuat Container penuh lebar
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        "Item ${index}",
+                        style: TextStyle(fontSize: 10),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "CODE00${index}",
+                        style: TextStyle(color: Colors.grey, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 30,
+                          width: 30,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.add),
+                              color: Colors.white,
+                              iconSize: 15,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 30,
+                          height: 20,
+                          child: Center(child: Text("${index}")),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 30,
+                          width: 30,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.add),
+                              color: Colors.white,
+                              iconSize: 15,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              shrinkWrap: true, //MUST TO ADDED
-              physics: NeverScrollableScrollPhysics(),
-              //MUST TO ADDED
-              itemCount: _diceface,
-              itemBuilder: (BuildContext c, int index) {
-                return CardListItemDO(
-                  isLast: index == _diceface - 1,
-                  index: _diceface,
-                );
-              }),
         ],
       ),
     );
@@ -334,7 +356,7 @@ class CardListItemDO extends StatelessWidget {
     var _okRandom = _random.nextInt(10) + 1;
 
     return Container(
-      margin: EdgeInsets.only(bottom: 12),
+      margin: const EdgeInsets.only(bottom: 12),
       child: Column(
         children: [
           Row(
@@ -343,13 +365,13 @@ class CardListItemDO extends StatelessWidget {
                   flex: 1,
                   child: Text(
                     "Miliard Selang ${_okRandom}MM",
-                    style: TextStyle(
+                    style: const TextStyle(
                         color: Colors.black, fontWeight: FontWeight.w600),
                   )),
               Text("${_okRandom}0 ROLL")
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 4,
           ),
           Row(
@@ -358,29 +380,29 @@ class CardListItemDO extends StatelessWidget {
                   flex: 1,
                   child: Text(
                     "kodeitem00${_okRandom}",
-                    style: TextStyle(
+                    style: const TextStyle(
                         fontSize: 10,
                         color: fontColorThin,
                         fontWeight: FontWeight.w400),
                   )),
               Text(
                 "Tonase : ${index + _okRandom * 2}0",
-                style: TextStyle(
+                style: const TextStyle(
                     fontSize: 10,
                     color: fontColorThin,
                     fontWeight: FontWeight.w400),
               )
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           !isLast
-              ? Divider(
+              ? const Divider(
                   thickness: 1,
                   color: Color(0xFFEEEEEE),
                 )
-              : SizedBox()
+              : const SizedBox()
         ],
       ),
     );
