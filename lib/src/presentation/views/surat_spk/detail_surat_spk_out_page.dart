@@ -2,27 +2,37 @@ import 'dart:math';
 
 import 'package:becca_supir/src/core/config/constant.dart';
 import 'package:becca_supir/src/presentation/views/absensi/absensi_page.dart';
+import 'package:expandable/expandable.dart';
 import 'package:flutter/material.dart';
+import 'package:simple_ripple_animation/simple_ripple_animation.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../../core/config/theme_colors.dart';
 
-class DetailSuratJalanClose extends StatefulWidget {
-  static const String routeName = '/detail_surat_jalan_close_page';
+class DetailSuratJalanOut extends StatefulWidget {
+  static const String routeName = '/detail_surat_jalan_out_page';
 
-  const DetailSuratJalanClose({super.key});
+  const DetailSuratJalanOut({super.key});
 
   @override
-  State<DetailSuratJalanClose> createState() => _DetailSuratJalanCloseState();
+  State<DetailSuratJalanOut> createState() => _DetailSuratJalanOutState();
 }
 
-class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
+class _DetailSuratJalanOutState extends State<DetailSuratJalanOut> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFE4622E),
       appBar: AppBar(
+        backgroundColor: Color(0xFFE4622E),
         centerTitle: true,
-        title: Text("Detail Delivery Order"),
+        leading: BackButton(
+          color: Colors.white,
+        ),
+        title: Text(
+          "Detail Delivery Order",
+          style: TextStyle(color: Colors.white),
+        ),
       ),
       body: Container(
         padding: EdgeInsets.symmetric(horizontal: 30),
@@ -37,14 +47,14 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                     flex: 40,
                     child: Text(
                       "No Delivery Plan",
-                      style: TextStyle(color: fontColorThin),
+                      style: TextStyle(color: Colors.white70),
                     )),
                 Expanded(
                     flex: 60,
                     child: Text(
                       "DP-001",
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
+                          color: Colors.white, fontWeight: FontWeight.w600),
                     )),
               ],
             ),
@@ -57,14 +67,14 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                     flex: 40,
                     child: Text(
                       "Tanggal",
-                      style: TextStyle(color: fontColorThin),
+                      style: TextStyle(color: Colors.white70),
                     )),
                 Expanded(
                     flex: 60,
                     child: Text(
                       "04/04/2023",
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
+                          color: Colors.white, fontWeight: FontWeight.w600),
                     )),
               ],
             ),
@@ -77,14 +87,14 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                     flex: 40,
                     child: Text(
                       "Customer",
-                      style: TextStyle(color: fontColorThin),
+                      style: TextStyle(color: Colors.white70),
                     )),
                 Expanded(
                     flex: 60,
                     child: Text(
                       "PT. Hutama Karya",
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
+                          color: Colors.white, fontWeight: FontWeight.w600),
                     )),
               ],
             ),
@@ -97,7 +107,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                     flex: 40,
                     child: Text(
                       "Alamat",
-                      style: TextStyle(color: fontColorThin),
+                      style: TextStyle(color: Colors.white70),
                     )),
                 Expanded(
                     flex: 60,
@@ -106,7 +116,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600),
+                          color: Colors.white, fontWeight: FontWeight.w600),
                     )),
               ],
             ),
@@ -115,22 +125,71 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
             ),
             Divider(
               thickness: 1,
-              color: Colors.grey,
+              color: Colors.white70,
             ),
             SizedBox(
-              height: 30,
+              height: 15,
             ),
             Expanded(
               flex: 1,
-              child: ListView.builder(
-                  shrinkWrap: true, //MUST TO ADDED
-                  //MUST TO ADDED
-                  itemCount: 4,
-                  itemBuilder: (BuildContext c, int index) {
-                    return CardListDO(
-                      index: index,
-                    );
-                  }),
+              child: ListView(
+                children: [
+                  Center(
+                    child: Text(
+                      "Sedang loading barang..",
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Center(
+                    child: Text(
+                      "PT. HUTAMA KARYA",
+                      style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  RippleAnimation(
+                    color: Colors.orange,
+                    delay: const Duration(milliseconds: 300),
+                    repeat: true,
+                    minRadius: 80,
+                    ripplesCount: 10,
+                    duration: const Duration(milliseconds: 10 * 300),
+                    child: Container(
+                      width: 180,
+                      height: 180,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.white,
+                      ),
+                      child:
+                          Image.asset(Assets.images.logoSupir.path, width: 128),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
+                  ),
+                  ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true, //MUST TO ADDED
+                      //MUST TO ADDED
+                      itemCount: 4,
+                      itemBuilder: (BuildContext c, int index) {
+                        return CardDOWidget(index: index);
+                      }),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 20,
             ),
             SafeArea(
               minimum: const EdgeInsets.fromLTRB(0, 0, 0, 20),
@@ -138,20 +197,28 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
                   onPressed: () async {
-                    Navigator.pop(context);
+                    final isOke = await handleFormSubmit(context);
+
+                    if (isOke != null) {
+                      if (isOke) {
+                        Navigator.popAndPushNamed(
+                            context, AbsensiPage.routeName,
+                            arguments: false);
+                      }
+                    }
                   },
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xFFEEEEEE),
+                      backgroundColor: themeOrangeBg,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30))),
                   child: Padding(
                     padding: EdgeInsets.symmetric(vertical: 16),
                     child: Text(
-                      "Kembali",
+                      "Check Out",
                       style: TextStyle(
                           fontSize: 16,
-                          color: Colors.black,
-                          fontWeight: FontWeight.w600),
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700),
                     ),
                   ),
                 ),
@@ -185,7 +252,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                   height: 4,
                 ),
                 const Text(
-                  "Apakah anda yakin untuk check in ?",
+                  "Apakah anda yakin untuk check out ?",
                   style: TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w400,
@@ -203,7 +270,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                           backgroundColor: ThemeColors.neutral4,
                         ),
                         child: Padding(
@@ -229,7 +296,7 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(16),
@@ -250,14 +317,10 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
       },
     );
   }
-
 }
 
-class CardListDO extends StatelessWidget {
-  const CardListDO({
-    super.key,
-    required this.index,
-  });
+class CardDOWidget extends StatelessWidget {
+  const CardDOWidget({super.key, required this.index});
 
   final int index;
 
@@ -276,45 +339,44 @@ class CardListDO extends StatelessWidget {
       "SUGAR",
       "COPI"
     ];
+
     return Container(
-      margin: EdgeInsets.only(bottom: 20),
-      child: Column(
-        children: [
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF5F5F5)
-            ),
-            child: Row(
-              children: [
-                Expanded(
-                    flex: 1,
-                    child: Text(
-                      "SJ-00${index + 1}",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w700),
-                    )),
-                Text(sub[_diceface])
-              ],
-            ),
+      margin: EdgeInsets.only(bottom: 20, left: 20, right: 20),
+      padding: EdgeInsets.all(16),
+      decoration: BoxDecoration(
+          color: Colors.white, borderRadius: BorderRadius.circular(10)),
+      child: ExpandablePanel(
+        header: IntrinsicHeight(
+          child: Row(
+            children: [
+              Text(
+                "SJ-00${index + 1}",
+                style:
+                    TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+              ),
+              VerticalDivider(
+                thickness: 1,
+                color: fontColorThin,
+              ),
+              Text(
+                sub[_diceface],
+                style: TextStyle(color: fontColorThin),
+              )
+            ],
           ),
-          SizedBox(
-            height: 20,
-          ),
-          ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 20),
-              shrinkWrap: true, //MUST TO ADDED
-              physics: NeverScrollableScrollPhysics(),
-              //MUST TO ADDED
-              itemCount: _diceface,
-              itemBuilder: (BuildContext c, int index) {
-                return CardListItemDO(
-                  isLast: index == _diceface - 1,
-                  index: _diceface,
-                );
-              }),
-        ],
+        ),
+        collapsed: SizedBox(),
+        expanded: ListView.builder(
+            shrinkWrap: true, //MUST TO ADDED
+            physics: NeverScrollableScrollPhysics(),
+            //MUST TO ADDED
+            itemCount: _diceface,
+            itemBuilder: (BuildContext c, int index) {
+              return CardListItemDO(
+                isLast: index == _diceface - 1,
+                index: _diceface,
+              );
+            }),
       ),
     );
   }
@@ -387,5 +449,4 @@ class CardListItemDO extends StatelessWidget {
       ),
     );
   }
-
 }

@@ -6,7 +6,7 @@ import 'package:becca_supir/src/presentation/views/home/home_page.dart';
 import 'package:becca_supir/src/presentation/views/notification/notification_page.dart';
 
 import 'package:becca_supir/src/presentation/views/profile/profile_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/riwayat_surat_jalan_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/riwayat_surat_spk_page.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

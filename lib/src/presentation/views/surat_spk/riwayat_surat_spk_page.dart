@@ -1,5 +1,5 @@
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_in_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -127,7 +127,8 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
                     Text(
                       "Reset",
                       style: TextStyle(
-                          color: Color(0xFFCCD2E3), fontWeight: FontWeight.w600),
+                          color: Color(0xFFCCD2E3),
+                          fontWeight: FontWeight.w600),
                     )
                   ],
                 ),
@@ -144,8 +145,12 @@ class _SuratJalanPageState extends State<SuratJalanPage> {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ...['Terbaru - Terlama', 'Terlama - Terbaru', 'Customer A-Z', 'Customer Z-A']
-                          .map((pickup) {
+                      ...[
+                        'Terbaru - Terlama',
+                        'Terlama - Terbaru',
+                        'Customer A-Z',
+                        'Customer Z-A'
+                      ].map((pickup) {
                         return ValueListenableBuilder<String>(
                           valueListenable: rxPickup,
                           builder: (context, groupValue, child) {
@@ -271,7 +276,8 @@ class CardListSuratJalan extends StatelessWidget {
                         color: Colors.black,
                         fontSize: 12,
                         fontWeight: FontWeight.w400),
-                  ),SizedBox(
+                  ),
+                  SizedBox(
                     height: 4,
                   ),
                   Text(

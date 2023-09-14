@@ -1,7 +1,7 @@
 import 'package:becca_supir/src/core/config/constant.dart';
 import 'package:becca_supir/src/presentation/views/delivery_order/result_confirm_do_page.dart';
 import 'package:becca_supir/src/presentation/views/success/confirm_success_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_in_page.dart';
+// import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_spk_in_page.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/assets/assets.gen.dart';
