@@ -40,22 +40,54 @@ class _ProfilePageState extends State<ProfilePage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const SizedBox(
-                  height: 50,
+                  height: 30,
+                ),
+                const Text(
+                  "Profile",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w700,
+                      fontSize: 16),
+                ),
+                SizedBox(
+                  height: 20,
                 ),
                 GestureDetector(
-                  onTap: () {},
+                  onTap: () {
+                    // Tindakan yang diambil ketika gambar diklik
+                  },
                   child: Container(
                     decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(75)),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(75),
+                    ),
                     width: 100,
                     height: 100,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(100),
-                      child: Image.asset(
-                        "",
-                        fit: BoxFit.cover,
-                      ),
+                    child: Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(100),
+                          child: Image.asset(
+                            "assets/gambar.jpg",
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: Colors.redAccent,
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
@@ -88,14 +120,23 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  "Profil",
-                  style: TextStyle(
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                    color: themeFontDefault,
+                Container(
+                  width: 290,
+                  padding: const EdgeInsets.only(bottom: 11),
+                  decoration: const BoxDecoration(
+                      border: Border(
+                    bottom: BorderSide(color: Colors.grey, width: 1.0),
+                  )),
+                  child: const Text(
+                    "Profil",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: themeFontDefault,
+                    ),
                   ),
                 ),
+
                 const SizedBox(
                   height: 12,
                 ),
@@ -117,7 +158,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 ),
                 const FormInputNewPassword(),
                 const SizedBox(
-                  height: 12,
+                  height: 32,
                 ),
                 GestureDetector(
                   child: ButtonLogout(
@@ -263,7 +304,7 @@ class FormInputNewPassword extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(12),
               child: SvgPicture.asset(
-                Assets.material.eye,
+                Assets.material.edit,
                 colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
               ),
             ),
@@ -301,6 +342,7 @@ class FormInputPhoneProfile extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
               Assets.material.edit,
+              colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
           leading: Container(
@@ -345,6 +387,7 @@ class FormInputEmailProfile extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
               Assets.material.edit,
+              colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
           leading: Container(
@@ -391,6 +434,7 @@ class FormInputUserProfile extends StatelessWidget {
             padding: const EdgeInsets.all(12),
             child: SvgPicture.asset(
               Assets.material.edit,
+              colorFilter: ColorFilter.mode(Colors.grey, BlendMode.srcIn),
             ),
           ),
           leading: Container(

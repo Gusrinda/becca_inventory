@@ -9,16 +9,13 @@ import '../../../core/assets/assets.gen.dart';
 import 'notification_settings.dart';
 
 class NotificationPage extends StatefulWidget {
-
   const NotificationPage({super.key});
 
   @override
   State<NotificationPage> createState() => _NotificationPageState();
-
 }
 
 class _NotificationPageState extends State<NotificationPage> {
-
   @override
   void initState() {
     // Notifications.init();
@@ -36,7 +33,7 @@ class _NotificationPageState extends State<NotificationPage> {
     ];
 
     List<String> daftarTanggal = ["28 April 2023", "27 April 2023"];
-    List<int> daftar = [1, 3];
+    List<int> daftar = [1, 2];
 
     return Scaffold(
       appBar: AppBar(
@@ -121,15 +118,20 @@ class CardListNotification extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-    Widget iconNotifikasi = SvgPicture.asset(Assets.material.form, width: 20,
+    Widget iconNotifikasi = SvgPicture.asset(
+      Assets.material.form,
+      width: 20,
       colorFilter: ColorFilter.mode(
-          isAlreadyRead ? Colors.grey : Colors.green, BlendMode.srcIn),
+          isAlreadyRead ? Colors.grey : Colors.red, BlendMode.srcIn),
     );
 
     return GestureDetector(
-      onTap: (){
-        Navigator.pushNamed(context, !isAlreadyRead ? DetailSuratJalanIn.routeName : DetailSuratJalanClose.routeName);
+      onTap: () {
+        Navigator.pushNamed(
+            context,
+            !isAlreadyRead
+                ? DetailSuratJalanIn.routeName
+                : DetailSuratJalanClose.routeName);
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 12),
@@ -148,14 +150,14 @@ class CardListNotification extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Text(
-                    "DO-007 Telah Masuk ke Daftar Pengiriman Anda . Silakan lakukan pengiriman.",
+                    "SPK-007 Ditolak. Silakan lakukan pengaturan ulang.",
                     overflow: TextOverflow.ellipsis,
                     maxLines: 2,
                     style: TextStyle(
                         color: Colors.black,
                         fontSize: 12,
-                        fontWeight: isAlreadyRead ? FontWeight.w400 : FontWeight
-                            .w600),
+                        fontWeight:
+                            isAlreadyRead ? FontWeight.w400 : FontWeight.w600),
                   ),
                 ),
                 SizedBox(
@@ -173,8 +175,8 @@ class CardListNotification extends StatelessWidget {
             ),
             !isLast
                 ? Divider(
-              color: Colors.grey,
-            )
+                    color: Colors.grey,
+                  )
                 : SizedBox()
           ],
         ),

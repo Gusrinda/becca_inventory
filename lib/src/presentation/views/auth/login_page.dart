@@ -165,7 +165,7 @@ class _LoginPageState extends State<LoginPage> {
                     "Forget Password?",
                     style: TextStyle(
                         fontSize: 12.sp,
-                        color: themeOrange,
+                        color: themeRed,
                         decoration: TextDecoration.underline),
                   ),
                 ),
@@ -195,7 +195,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: Ink(
                     padding: const EdgeInsets.symmetric(vertical: 12),
                     decoration: const BoxDecoration(
-                        color: themeOrange,
+                        color: themeRed,
                         borderRadius: BorderRadius.all(Radius.circular(20))),
                     child: const Center(
                       child: Text(

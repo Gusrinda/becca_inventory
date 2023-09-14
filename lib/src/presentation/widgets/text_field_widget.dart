@@ -528,27 +528,28 @@ class FormzUnderlineTextField extends StatelessWidget {
       enabled: enabled,
       autofocus: autofocus,
       decoration: InputDecoration(
-        border: const UnderlineInputBorder(
-          borderSide: BorderSide(),
-          borderRadius: BorderRadius.all(Radius.circular(10)),
-        ),
+        border: InputBorder.none,
+        // border: const UnderlineInputBorder(
+        //   borderSide: BorderSide(),
+        //   borderRadius: BorderRadius.all(Radius.circular(0)),
+        // ),
         // ignore: prefer_const_constructors
-        enabledBorder: UnderlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          borderSide: const BorderSide(color: Colors.black12),
-        ),
-        focusedBorder: UnderlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          borderSide: const BorderSide(color: themeFontDefault),
-        ),
-        errorBorder: UnderlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          borderSide: BorderSide(color: Theme.of(context).errorColor),
-        ),
-        disabledBorder: UnderlineInputBorder(
-          borderRadius: const BorderRadius.all(Radius.circular(10)),
-          borderSide: BorderSide(color: ThemeColors.neutral5),
-        ),
+        // enabledBorder: UnderlineInputBorder(
+        //   borderRadius: const BorderRadius.all(Radius.circular(10)),
+        //   borderSide: const BorderSide(color: Colors.black12),
+        // ),
+        // focusedBorder: UnderlineInputBorder(
+        //   borderRadius: const BorderRadius.all(Radius.circular(10)),
+        //   borderSide: const BorderSide(color: themeFontDefault),
+        // ),
+        // errorBorder: UnderlineInputBorder(
+        //   borderRadius: const BorderRadius.all(Radius.circular(10)),
+        //   borderSide: BorderSide(color: Theme.of(context).errorColor),
+        // ),
+        // disabledBorder: UnderlineInputBorder(
+        //   borderRadius: const BorderRadius.all(Radius.circular(10)),
+        //   borderSide: BorderSide(color: ThemeColors.neutral5),
+        // ),
         // constraints: const BoxConstraints(maxHeight: 48),
         contentPadding: contentPadding ?? const EdgeInsets.fromLTRB(0, 0, 0, 0),
         fillColor: !enabled ? ThemeColors.neutral2 : Colors.white,
@@ -558,7 +559,9 @@ class FormzUnderlineTextField extends StatelessWidget {
         suffixIcon: trailing,
         hintText: hintText,
         hintStyle: const TextStyle(
-            color: ThemeColors.greyCaption, fontStyle: FontStyle.italic, fontWeight: FontWeight.w300),
+            color: ThemeColors.greyCaption,
+            fontStyle: FontStyle.italic,
+            fontWeight: FontWeight.w300),
         errorText: errorText,
         errorMaxLines: errorMaxLines,
         errorStyle: errorText != null && errorText!.isEmpty
