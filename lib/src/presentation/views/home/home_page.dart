@@ -234,7 +234,7 @@ class _HomePageState extends State<HomePage> {
                             // physics: NeverScrollableScrollPhysics(),
                             itemBuilder: (BuildContext c, int index) {
                               return CardPengirimanTerakhir(
-                                index: index * 2 + 1,
+                                index: index * 1 + 1,
                               );
                             },
                           ),
@@ -262,6 +262,22 @@ class CardPengirimanTerakhir extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Color containerColor;
+
+    switch (index) {
+      case 4:
+        containerColor = Colors.green;
+        break;
+      case 5:
+        containerColor = Colors.green;
+        break;
+      case 6:
+        containerColor = Colors.red;
+        break;
+      default:
+        containerColor = Colors.grey;
+        break;
+    }
     return GestureDetector(
       onTap: () {
         Navigator.pushNamed(context, DetailSuratJalanClose.routeName);
@@ -297,7 +313,7 @@ class CardPengirimanTerakhir extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    "04 Mei 2023",
+                    "0${index} Mei 2023",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -307,7 +323,12 @@ class CardPengirimanTerakhir extends StatelessWidget {
                   )
                 ],
               ),
-            )
+            ),
+            Container(
+              padding: EdgeInsets.all(6),
+              decoration:
+                  BoxDecoration(color: containerColor, shape: BoxShape.circle),
+            ),
           ],
         ),
       ),
