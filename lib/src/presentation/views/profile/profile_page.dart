@@ -67,12 +67,8 @@ class _ProfilePageState extends State<ProfilePage> {
                       alignment: Alignment.center,
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(100),
-                          child: Image.asset(
-                            "assets/gambar.jpg",
-                            fit: BoxFit.fill,
-                          ),
-                        ),
+                            borderRadius: BorderRadius.circular(100),
+                            child: SvgPicture.asset(Assets.material.camera)),
                         Positioned(
                           bottom: 0,
                           right: 0,

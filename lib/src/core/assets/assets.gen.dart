@@ -410,6 +410,14 @@ class $AssetsImagesGen {
   AssetGenImage get confirmation2 =>
       const AssetGenImage('assets/images/confirmation2.png');
 
+  /// File path: assets/images/diterima1.png
+  AssetGenImage get diterima1 =>
+      const AssetGenImage('assets/images/diterima1.png');
+
+  /// File path: assets/images/ditolak1.png
+  AssetGenImage get ditolak1 =>
+      const AssetGenImage('assets/images/ditolak1.png');
+
   /// File path: assets/images/image_card.png
   AssetGenImage get imageCard =>
       const AssetGenImage('assets/images/image_card.png');
@@ -499,6 +507,8 @@ class $AssetsImagesGen {
         bgOrange,
         confirmation,
         confirmation2,
+        diterima1,
+        ditolak1,
         imageCard,
         konfirmasi,
         logoBecca,
@@ -530,6 +540,9 @@ class $AssetsMaterialGen {
 
   /// File path: assets/material/Box.svg
   String get box => 'assets/material/Box.svg';
+
+  /// File path: assets/material/Camera.svg
+  String get camera => 'assets/material/Camera.svg';
 
   /// File path: assets/material/Done.svg
   String get done => 'assets/material/Done.svg';
@@ -616,6 +629,7 @@ class $AssetsMaterialGen {
   List<String> get values => [
         bell,
         box,
+        camera,
         done,
         editInv,
         form,
@@ -649,13 +663,9 @@ class $AssetsMaterialGen {
 class Assets {
   Assets._();
 
-  static const AssetGenImage bgOrange = AssetGenImage('assets/BgOrange.png');
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsMaterialGen material = $AssetsMaterialGen();
-
-  /// List of all assets
-  List<AssetGenImage> get values => [bgOrange];
 }
 
 class AssetGenImage {

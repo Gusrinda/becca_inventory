@@ -25,65 +25,79 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
         title: const Text("Detail SPK"),
       ),
       body: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(
               height: 20,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "No. SPK",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                Text(
-                  "Tanggal",
-                  style: TextStyle(color: Colors.grey),
-                )
-              ],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "No. SPK",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Text(
+                    "Tanggal",
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 2,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text("SPK-001"), Text("28 April 2023")],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text("SPK-001"), Text("28 April 2023")],
+              ),
             ),
             const SizedBox(
               height: 12,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Depo",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                Text(
-                  "Gudang",
-                  style: TextStyle(color: Colors.grey),
-                )
-              ],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Depo",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  Text(
+                    "Gudang",
+                    style: TextStyle(color: Colors.grey),
+                  )
+                ],
+              ),
             ),
             const SizedBox(
               height: 2,
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [Text("WH-001"), Text("Gudang A")],
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [Text("WH-001"), Text("Gudang A")],
+              ),
             ),
             const SizedBox(
               height: 30,
             ),
-            const Text(
-              "Detail Item",
-              style: TextStyle(color: Colors.redAccent),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                "Detail Item",
+                style: TextStyle(color: Colors.redAccent),
+              ),
             ),
             const SizedBox(
-              height: 30,
+              height: 10,
             ),
             Expanded(
               flex: 1,
@@ -97,29 +111,32 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
                     );
                   }),
             ),
-            SafeArea(
-              minimum: const EdgeInsets.fromLTRB(0, 0, 0, 20),
-              child: Container(
-                width: MediaQuery.of(context).size.width,
-                child: ElevatedButton(
-                  onPressed: () async {
-                    bool? result = await handleFormSubmit(context);
-                    if (result != null && result) {
-                      Navigator.pop(context);
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.redAccent,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30))),
-                  child: const Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10),
-                    child: Text(
-                      "Submit",
-                      style: TextStyle(
-                          fontSize: 16,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w600),
+            Center(
+              child: SafeArea(
+                minimum: const EdgeInsets.fromLTRB(0, 0, 0, 20),
+                child: Container(
+                  height: 40,
+                  width: 300,
+                  child: ElevatedButton(
+                    onPressed: () async {
+                      bool? result = await handleFormSubmit(context);
+                      if (result != null && result) {
+                        Navigator.pop(context);
+                      }
+                    },
+                    style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.redAccent,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30))),
+                    child: const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 10),
+                      child: Text(
+                        "Submit",
+                        style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600),
+                      ),
                     ),
                   ),
                 ),
@@ -237,23 +254,23 @@ class CardListDO extends StatelessWidget {
         containerColor = Colors.white;
         break;
       case 1:
-        containerColor = Color(0xffE1E0E0);
+        containerColor = Color(0xffF5F5F5);
         break;
       default:
         containerColor = Colors.grey;
         break;
     }
     return Container(
-      margin: const EdgeInsets.only(bottom: 0),
+      margin: const EdgeInsets.all(0),
       decoration: BoxDecoration(
         color: containerColor,
       ),
       child: Row(
         children: [
           Expanded(
-            // Widget Expanded untuk membuat Container penuh lebar
             child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              padding: const EdgeInsets.only(
+                  top: 10, bottom: 10, right: 15, left: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 // crossAxisAlignment: CrossAxisAlignment.start,
@@ -262,7 +279,8 @@ class CardListDO extends StatelessWidget {
                     children: [
                       Text(
                         "Item ${index}",
-                        style: TextStyle(fontSize: 10),
+                        style: TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         height: 10,
@@ -274,6 +292,18 @@ class CardListDO extends StatelessWidget {
                     ],
                   ),
                   Container(
+                    width: 40,
+                    height: 35,
+                    decoration: const BoxDecoration(
+                      border: Border.symmetric(
+                        vertical: BorderSide(
+                          color: Color(0xffCCD2E3),
+                        ),
+                      ),
+                    ),
+                    child: Center(child: Text("${index}")),
+                  ),
+                  Container(
                     child: Row(
                       children: [
                         Container(
@@ -281,15 +311,15 @@ class CardListDO extends StatelessWidget {
                             color: Colors.redAccent,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          height: 30,
-                          width: 30,
+                          height: 25,
+                          width: 25,
                           child: Align(
                             alignment: Alignment.center,
                             child: IconButton(
                               onPressed: () {},
-                              icon: const Icon(Icons.add),
+                              icon: const Icon(Icons.remove),
                               color: Colors.white,
-                              iconSize: 15,
+                              iconSize: 10,
                               alignment: Alignment.center,
                             ),
                           ),
@@ -298,11 +328,12 @@ class CardListDO extends StatelessWidget {
                           width: 15,
                         ),
                         Container(
-                          width: 30,
+                          width: 35,
                           height: 20,
                           child: Center(child: Text("${index}")),
                           decoration: BoxDecoration(
                             color: Colors.white,
+                            border: Border.all(color: Color(0xffE7E9FD)),
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -314,15 +345,15 @@ class CardListDO extends StatelessWidget {
                             color: Colors.redAccent,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          height: 30,
-                          width: 30,
+                          height: 25,
+                          width: 25,
                           child: Align(
                             alignment: Alignment.center,
                             child: IconButton(
                               onPressed: () {},
                               icon: const Icon(Icons.add),
                               color: Colors.white,
-                              iconSize: 15,
+                              iconSize: 10,
                               alignment: Alignment.center,
                             ),
                           ),
