@@ -254,7 +254,7 @@ class CardListDO extends StatelessWidget {
         containerColor = Colors.white;
         break;
       case 1:
-        containerColor = Color(0xffF5F5F5);
+        containerColor = const Color(0xffF5F5F5);
         break;
       default:
         containerColor = Colors.grey;
@@ -279,15 +279,139 @@ class CardListDO extends StatelessWidget {
                     children: [
                       Text(
                         "Item ${index}",
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontSize: 10, fontWeight: FontWeight.bold),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Text(
                         "CODE00${index}",
-                        style: TextStyle(color: Colors.grey, fontSize: 10),
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    child: Row(
+                      children: [
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 25,
+                          width: 25,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.remove),
+                              color: Colors.white,
+                              iconSize: 10,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          width: 35,
+                          height: 20,
+                          child: Center(child: Text("${index}")),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(color: const Color(0xffE7E9FD)),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15,
+                        ),
+                        Container(
+                          decoration: BoxDecoration(
+                            color: Colors.redAccent,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          height: 25,
+                          width: 25,
+                          child: Align(
+                            alignment: Alignment.center,
+                            child: IconButton(
+                              onPressed: () {},
+                              icon: const Icon(Icons.add),
+                              color: Colors.white,
+                              iconSize: 10,
+                              alignment: Alignment.center,
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CardListWrong extends StatelessWidget {
+  const CardListWrong({
+    super.key,
+    required this.index,
+  });
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    Color containerColor;
+
+    switch (index % 2) {
+      case 0:
+        containerColor = Colors.white;
+        break;
+      case 1:
+        containerColor = const Color(0xffF5F5F5);
+        break;
+      default:
+        containerColor = Colors.grey;
+        break;
+    }
+    return Container(
+      margin: const EdgeInsets.all(0),
+      decoration: BoxDecoration(
+        color: containerColor,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.only(
+                  top: 10, bottom: 10, right: 15, left: 40),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        "Item ${index}",
+                        style: const TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "CODE00${index}",
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 10),
                       ),
                     ],
                   ),
@@ -324,7 +448,7 @@ class CardListDO extends StatelessWidget {
                             ),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         Container(
@@ -333,7 +457,7 @@ class CardListDO extends StatelessWidget {
                           child: Center(child: Text("${index}")),
                           decoration: BoxDecoration(
                             color: Colors.white,
-                            border: Border.all(color: Color(0xffE7E9FD)),
+                            border: Border.all(color: const Color(0xffE7E9FD)),
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
@@ -359,6 +483,104 @@ class CardListDO extends StatelessWidget {
                           ),
                         )
                       ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class CardListCorrect extends StatelessWidget {
+  const CardListCorrect({
+    super.key,
+    required this.index,
+  });
+
+  final int index;
+
+  @override
+  Widget build(BuildContext context) {
+    Color containerColor;
+
+    switch (index % 2) {
+      case 0:
+        containerColor = Colors.white;
+        break;
+      case 1:
+        containerColor = const Color(0xffF5F5F5);
+        break;
+      default:
+        containerColor = Colors.grey;
+        break;
+    }
+    return Container(
+      margin: const EdgeInsets.all(0),
+      decoration: BoxDecoration(
+        color: containerColor,
+      ),
+      child: Row(
+        children: [
+          Expanded(
+            child: Container(
+              padding: const EdgeInsets.only(
+                  top: 10, bottom: 10, right: 0, left: 30),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Column(
+                    children: [
+                      Text(
+                        "Item ${index}",
+                        style: const TextStyle(
+                            fontSize: 10, fontWeight: FontWeight.bold),
+                      ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                      Text(
+                        "CODE00${index}",
+                        style:
+                            const TextStyle(color: Colors.grey, fontSize: 10),
+                      ),
+                    ],
+                  ),
+                  Container(
+                    width: 40,
+                    height: 35,
+                    decoration: const BoxDecoration(
+                      border: Border.symmetric(
+                        vertical: BorderSide(
+                          color: Color(0xffCCD2E3),
+                        ),
+                      ),
+                    ),
+                    child: Center(child: Text("${index}")),
+                  ),
+                  Container(
+                    decoration: const BoxDecoration(
+                      shape: BoxShape
+                          .circle, // Untuk membuat latar belakang menjadi lingkaran
+                      color: Colors.green, // Warna latar belakang hijau
+                    ),
+                    width: 30, // Lebar latar belakang
+                    height: 30,
+                    margin: const EdgeInsets.only(right: 90),
+                    child: Align(
+                      alignment: Alignment.center,
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: const Icon(
+                          Icons.done,
+                          color: Colors.white,
+                          size: 17,
+                        ),
+                      ),
                     ),
                   ),
                 ],
