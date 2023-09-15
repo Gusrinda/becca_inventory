@@ -175,11 +175,10 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               child: DraggableScrollableSheet(
-                initialChildSize: 0.5,
+                initialChildSize: 0.4,
                 minChildSize: 0.4,
                 maxChildSize: 1,
                 builder: (_, controller) => Container(
-                  padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.only(
@@ -187,60 +186,65 @@ class _HomePageState extends State<HomePage> {
                       topRight: Radius.circular(30),
                     ),
                   ),
-                  child: SafeArea(
-                    child: ListView(
-                      physics: BouncingScrollPhysics(),
-                      controller: controller,
-                      children: [
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Container(
-                            margin: EdgeInsets.only(bottom: 10),
-                            height: 5,
-                            width: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: themeHintRed,
+                  child: Stack(
+                    children: [
+                      Align(
+                        alignment: Alignment.topCenter,
+                        child: Container(
+                          margin: EdgeInsets.only(top: 20),
+                          height: 5,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: themeHintRed,
+                          ),
+                        ),
+                      ),
+                      SafeArea(
+                        child: ListView(
+                          physics: BouncingScrollPhysics(),
+                          controller: controller,
+                          children: [
+                            SizedBox(height: 20),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 30),
+                              child: Text(
+                                "List SPK",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                ),
+                              ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: Text(
-                            "List SPK",
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w600,
-                              fontSize: 12,
+                            Padding(
+                              padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
+                              child: SearchFieldGrayBar(
+                                hintText: "Search",
+                                fillColor: ThemeColors.grey6,
+                                onSubmitted: (value) {},
+                              ),
                             ),
-                          ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Container(
+                              margin: EdgeInsets.symmetric(horizontal: 30),
+                              child: ListView.builder(
+                                shrinkWrap: true,
+                                itemCount: 10,
+                                itemBuilder: (BuildContext c, int index) {
+                                  return CardPengirimanTerakhir(
+                                    index: index * 1 + 1,
+                                  );
+                                },
+                              ),
+                            ),
+                          ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
-                          child: SearchFieldGrayBar(
-                              hintText: "Search",
-                              fillColor: ThemeColors.grey6,
-                              onSubmitted: (value) {}),
-                        ),
-                        SizedBox(
-                          height: 10,
-                        ),
-                        Container(
-                          margin: EdgeInsets.symmetric(horizontal: 30),
-                          child: ListView.builder(
-                            shrinkWrap: true, //MUST TO ADDED
-                            //MUST TO ADDED
-                            itemCount: 10,
-                            // physics: NeverScrollableScrollPhysics(),
-                            itemBuilder: (BuildContext c, int index) {
-                              return CardPengirimanTerakhir(
-                                index: index * 1 + 1,
-                              );
-                            },
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
