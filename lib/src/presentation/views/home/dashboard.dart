@@ -45,7 +45,6 @@ class _DashboardPageState extends State<DashboardPage> {
       isSelectedStream = event;
       changePageDirectly(event);
     });
-
   }
 
   @override
@@ -75,10 +74,10 @@ class _DashboardPageState extends State<DashboardPage> {
       onTap: (page) {
         pageSelectController.add(page);
       },
-      defaultSelected: isSelectedStream?? 0,
+      defaultSelected: isSelectedStream ?? 0,
       height: kToolbarHeight,
       backgroundColor: Colors.white,
-      selectedItemColor: themeOrange,
+      selectedItemColor: themeRed2,
       unselectedItemColor: ThemeColors.grey4,
       selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
       unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),

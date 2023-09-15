@@ -13,6 +13,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../../../core/assets/assets.gen.dart';
+import '../../widgets/text_field_widget.dart';
 import '../surat_jalan/detail_surat_jalan_close_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -39,7 +40,7 @@ class _HomePageState extends State<HomePage> {
       body: Container(
         decoration: BoxDecoration(
             image: DecorationImage(
-          image: AssetImage(Assets.images.bgOrange.path),
+          image: AssetImage(Assets.images.bgMerah.path),
           fit: BoxFit.cover,
         )),
         child: Stack(
@@ -56,163 +57,35 @@ class _HomePageState extends State<HomePage> {
                       ),
                       Container(
                         padding: EdgeInsets.symmetric(horizontal: 30),
-                        // height: 48,
-                        child: Row(
+                        child: Stack(
+                          alignment: Alignment.center,
                           children: [
-                            Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(36)),
-                              width: 72,
-                              height: 72,
-                              child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(35),
-                                  child: Assets.images.profileSupir
-                                      .image(fit: BoxFit.cover)),
-                            ),
-                            SizedBox(
-                              width: 20,
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text(
-                                    "Dwi Kurnia",
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                      fontWeight: FontWeight.w700,
-                                      color: Colors.white,
-                                    ),
-                                  ),
-                                  // SizedBox(
-                                  //   height: 2,
-                                  // ),
-                                  Text(
-                                    "Surabaya",
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.white,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 30,
-                      ),
-                      Container(
-                        padding: EdgeInsets.symmetric(horizontal: 30),
-                        child: Row(
-                          children: [
-                            Expanded(
-                              flex: 1,
-                              child: GestureDetector(
-                                onTap: () {
-                                  Navigator.pushNamed(
-                                      context, ListSuratJalan.routeName);
-                                },
-                                child: Container(
+                            Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Container(
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(10),
-                                      color: Color(0xFFFFF2CC)),
-                                  padding: EdgeInsets.all(16),
-                                  child: Row(
-                                    children: [
-                                      Container(
-                                        decoration: BoxDecoration(
-                                            color: themeBrown.withOpacity(0.3),
-                                            shape: BoxShape.circle),
-                                        padding: EdgeInsets.all(12),
-                                        child: SvgPicture.asset(
-                                            Assets.material.process),
-                                      ),
-                                      SizedBox(
-                                        width: 12,
-                                      ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              "1",
-                                              style: TextStyle(
-                                                  fontSize: 24,
-                                                  color: themeBrown,
-                                                  fontWeight: FontWeight.w700),
-                                            ),
-                                            Text(
-                                              "Diproses",
-                                              style: TextStyle(
-                                                  fontSize: 12,
-                                                  color: themeBrown,
-                                                  fontWeight: FontWeight.w400),
-                                            )
-                                          ],
-                                        ),
-                                      )
-                                    ],
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(36),
+                                  ),
+                                  width: 72,
+                                  height: 72,
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(35),
+                                    child: Assets.images.profileDinda
+                                        .image(fit: BoxFit.cover),
                                   ),
                                 ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 18,
-                            ),
-                            Expanded(
-                              flex: 1,
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
-                                    color: Color(0xFFFFF2CC)),
-                                padding: EdgeInsets.all(16),
-                                child: Row(
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          color: themeBrown.withOpacity(0.3),
-                                          shape: BoxShape.circle),
-                                      padding: EdgeInsets.all(12),
-                                      child: SvgPicture.asset(
-                                          Assets.material.done),
-                                    ),
-                                    SizedBox(
-                                      width: 12,
-                                    ),
-                                    Expanded(
-                                      flex: 1,
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            "20",
-                                            style: TextStyle(
-                                                fontSize: 24,
-                                                color: themeBrown,
-                                                fontWeight: FontWeight.w700),
-                                          ),
-                                          Text(
-                                            "Selesai",
-                                            style: TextStyle(
-                                                fontSize: 12,
-                                                color: themeBrown,
-                                                fontWeight: FontWeight.w400),
-                                          )
-                                        ],
-                                      ),
-                                    )
-                                  ],
+                                SizedBox(height: 10),
+                                Text(
+                                  "Hi, Dinda!",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: Colors.white,
+                                  ),
                                 ),
-                              ),
+                              ],
                             ),
                           ],
                         ),
@@ -223,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                       Expanded(
                         flex: 1,
                         child: Container(
-                          color: themeOrange.withOpacity(0.3),
+                          color: themeRed.withOpacity(0.3),
                           padding: EdgeInsets.symmetric(
                             horizontal: 30,
                             vertical: 20,
@@ -233,9 +106,7 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 height: 100,
                                 decoration: BoxDecoration(
-                                    color: Color(0xFFFDB740),
-                                    // color: Colors.white,
-                                    // color: Colors.red,
+                                    color: themeHintRed,
                                     borderRadius: BorderRadius.circular(15)),
                                 padding: EdgeInsets.all(12),
                                 child: Row(
@@ -247,9 +118,10 @@ class _HomePageState extends State<HomePage> {
                                           shape: BoxShape.circle),
                                       padding: EdgeInsets.all(12),
                                       child: SvgPicture.asset(
-                                        Assets.material.box,
-                                        width: 24,
-                                      ),
+                                          Assets.material.form,
+                                          width: 24,
+                                          colorFilter: ColorFilter.mode(
+                                              themeHintRed, BlendMode.srcIn)),
                                     ),
                                     SizedBox(
                                       width: 12,
@@ -268,7 +140,7 @@ class _HomePageState extends State<HomePage> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              "Ada 2 DO yang belum dikonfirmasi",
+                                              "2 SPK Ditolak",
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
@@ -277,7 +149,7 @@ class _HomePageState extends State<HomePage> {
                                                   fontWeight: FontWeight.w600),
                                             ),
                                             Text(
-                                              "Ketuk untuk konfirmasi",
+                                              "Segera hitung ulang item",
                                               maxLines: 1,
                                               overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
@@ -303,188 +175,69 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(
               child: DraggableScrollableSheet(
-                initialChildSize: 0.4,
+                initialChildSize: 0.5,
                 minChildSize: 0.4,
                 maxChildSize: 1,
                 builder: (_, controller) => Container(
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(30),
-                          topRight: Radius.circular(30))),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(30),
+                      topRight: Radius.circular(30),
+                    ),
+                  ),
                   child: SafeArea(
                     child: ListView(
                       physics: BouncingScrollPhysics(),
                       controller: controller,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 30),
-                          child: Row(
-                            children: [
-                              Expanded(
-                                child: GestureDetector(
-                                  onTap: () {
-                                    Navigator.pushNamed(
-                                        context, ListSuratJalan.routeName);
-
-                                    setState(() {
-                                      isCheckedIn = !isCheckedIn;
-                                    });
-                                  },
-                                  child: !isCheckedIn
-                                      ? Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 40, vertical: 20),
-                                          decoration: BoxDecoration(
-                                              color: Color(0xFFD9FFD9),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
-                                          child: Column(
-                                            children: [
-                                              Image.asset(
-                                                  Assets.icons.masuk.path),
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Text(
-                                                "Check In",
-                                                style: TextStyle(
-                                                    color: Colors.black,
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.w600),
-                                              )
-                                            ],
-                                          ),
-                                        )
-                                      : Container(
-                                          padding: EdgeInsets.symmetric(
-                                              horizontal: 40, vertical: 20),
-                                          decoration: BoxDecoration(
-                                              color: Color(0xFFF3F3F3),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(10))),
-                                          child: Column(
-                                            children: [
-                                              Image.asset(
-                                                  Assets.icons.masukGrey.path),
-                                              SizedBox(
-                                                height: 10,
-                                              ),
-                                              Text(
-                                                "Check In",
-                                                style: TextStyle(
-                                                    color: Color(0xFFBBBBBB),
-                                                    fontSize: 12,
-                                                    fontWeight:
-                                                        FontWeight.w600),
-                                              )
-                                            ],
-                                          ),
-                                        ),
-                                ),
-                              ),
-                              SizedBox(
-                                width: 20,
-                              ),
-                              Expanded(
-                                child: GestureDetector(
-                                    onTap: () {
-                                      // Navigator.pushNamed(context, AbsensiPage.routeName, arguments: false);
-
-                                      Navigator.pushNamed(context,
-                                          DetailSuratJalanOut.routeName);
-
-                                      setState(() {
-                                        isCheckedIn = !isCheckedIn;
-                                      });
-                                    },
-                                    child: isCheckedIn
-                                        ? Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 40, vertical: 20),
-                                            decoration: BoxDecoration(
-                                                color: Color(0xFFFFE2E2),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10))),
-                                            child: Column(
-                                              children: [
-                                                Image.asset(
-                                                  Assets.icons.keluar.path,
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Text(
-                                                  "Check Out",
-                                                  style: TextStyle(
-                                                      color: Colors.black,
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
-                                            ),
-                                          )
-                                        : Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 40, vertical: 20),
-                                            decoration: BoxDecoration(
-                                                color: Color(0xFFF3F3F3),
-                                                borderRadius: BorderRadius.all(
-                                                    Radius.circular(10))),
-                                            child: Column(
-                                              children: [
-                                                Image.asset(
-                                                  Assets.icons.keluarGrey.path,
-                                                ),
-                                                SizedBox(
-                                                  height: 10,
-                                                ),
-                                                Text(
-                                                  "Check Out",
-                                                  style: TextStyle(
-                                                      color: Color(0xFFBBBBBB),
-                                                      fontSize: 12,
-                                                      fontWeight:
-                                                          FontWeight.w600),
-                                                )
-                                              ],
-                                            ),
-                                          )),
-                              )
-                            ],
+                        Align(
+                          alignment: Alignment.topCenter,
+                          child: Container(
+                            margin: EdgeInsets.only(bottom: 10),
+                            height: 5,
+                            width: 40,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(10),
+                              color: themeHintRed,
+                            ),
                           ),
-                        ),
-                        SizedBox(
-                          height: 28,
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 30),
                           child: Text(
-                            "Riwayat Pengiriman Terakhir",
+                            "List SPK",
                             style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.w600,
-                                fontSize: 12),
+                              color: Colors.black,
+                              fontWeight: FontWeight.w600,
+                              fontSize: 12,
+                            ),
                           ),
                         ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(32, 16, 32, 0),
+                          child: SearchFieldGrayBar(
+                              hintText: "Search",
+                              fillColor: ThemeColors.grey6,
+                              onSubmitted: (value) {}),
+                        ),
                         SizedBox(
-                          height: 20,
+                          height: 10,
                         ),
                         Container(
                           margin: EdgeInsets.symmetric(horizontal: 30),
                           child: ListView.builder(
-                              shrinkWrap: true, //MUST TO ADDED
-                              //MUST TO ADDED
-                              itemCount: 10,
-                              // physics: NeverScrollableScrollPhysics(),
-                              itemBuilder: (BuildContext c, int index) {
-                                return CardPengirimanTerakhir(
-                                  index: index * 2 + 1,
-                                );
-                              }),
+                            shrinkWrap: true, //MUST TO ADDED
+                            //MUST TO ADDED
+                            itemCount: 10,
+                            // physics: NeverScrollableScrollPhysics(),
+                            itemBuilder: (BuildContext c, int index) {
+                              return CardPengirimanTerakhir(
+                                index: index * 2 + 1,
+                              );
+                            },
+                          ),
                         ),
                       ],
                     ),
@@ -515,20 +268,16 @@ class CardPengirimanTerakhir extends StatelessWidget {
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 12),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            border: Border.all(color: Color(0xFFDDDDDD))),
         padding: EdgeInsets.symmetric(horizontal: 12, vertical: 16),
         child: Row(
           children: [
             Container(
-              decoration: BoxDecoration(
-                  color: Color(0xFFEEEEEE), shape: BoxShape.circle),
+              decoration:
+                  BoxDecoration(color: themeIconRed, shape: BoxShape.circle),
               padding: EdgeInsets.all(20),
-              child: SvgPicture.asset(
-                Assets.material.form,
-                width: 24,
-              ),
+              child: SvgPicture.asset(Assets.material.form,
+                  width: 24,
+                  colorFilter: ColorFilter.mode(Colors.white, BlendMode.srcIn)),
             ),
             SizedBox(
               width: 12,
@@ -539,7 +288,7 @@ class CardPengirimanTerakhir extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    "SJ-00$index",
+                    "SPK-00$index",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
@@ -548,12 +297,12 @@ class CardPengirimanTerakhir extends StatelessWidget {
                         fontWeight: FontWeight.w600),
                   ),
                   Text(
-                    "PT. ABADI SENTOSA",
+                    "04 Mei 2023",
                     maxLines: 1,
                     overflow: TextOverflow.ellipsis,
                     style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 12,
+                        color: fontColorThin,
+                        fontSize: 10,
                         fontWeight: FontWeight.w400),
                   )
                 ],
