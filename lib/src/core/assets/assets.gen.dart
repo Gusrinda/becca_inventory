@@ -394,6 +394,10 @@ class $AssetsImagesGen {
   /// File path: assets/images/bg_biru.png
   AssetGenImage get bgBiru => const AssetGenImage('assets/images/bg_biru.png');
 
+  /// File path: assets/images/bg_merah.png
+  AssetGenImage get bgMerah =>
+      const AssetGenImage('assets/images/bg_merah.png');
+
   /// File path: assets/images/bg_orange.png
   AssetGenImage get bgOrange =>
       const AssetGenImage('assets/images/bg_orange.png');
@@ -457,6 +461,10 @@ class $AssetsImagesGen {
   AssetGenImage get profileBella =>
       const AssetGenImage('assets/images/profile_bella.png');
 
+  /// File path: assets/images/profile_dinda.png
+  AssetGenImage get profileDinda =>
+      const AssetGenImage('assets/images/profile_dinda.png');
+
   /// File path: assets/images/profile_supir.png
   AssetGenImage get profileSupir =>
       const AssetGenImage('assets/images/profile_supir.png');
@@ -487,6 +495,7 @@ class $AssetsImagesGen {
         addProduk,
         approval,
         bgBiru,
+        bgMerah,
         bgOrange,
         confirmation,
         imageCard,
@@ -503,6 +512,7 @@ class $AssetsImagesGen {
         produk4,
         profile,
         profileBella,
+        profileDinda,
         profileSupir,
         successAdd,
         successConfirm,
@@ -554,6 +564,9 @@ class $AssetsMaterialGen {
   /// File path: assets/material/confirm.svg
   String get confirm => 'assets/material/confirm.svg';
 
+  /// File path: assets/material/confirm_red.svg
+  String get confirmRed => 'assets/material/confirm_red.svg';
+
   /// File path: assets/material/edit.svg
   String get edit => 'assets/material/edit.svg';
 
@@ -562,6 +575,9 @@ class $AssetsMaterialGen {
 
   /// File path: assets/material/home.svg
   String get home => 'assets/material/home.svg';
+
+  /// File path: assets/material/image 22.svg
+  String get image22 => 'assets/material/image 22.svg';
 
   /// File path: assets/material/lock.svg
   String get lock => 'assets/material/lock.svg';
@@ -596,9 +612,11 @@ class $AssetsMaterialGen {
         circleWhite,
         cirleOrange,
         confirm,
+        confirmRed,
         edit,
         eye,
         home,
+        image22,
         lock,
         login,
         logout,

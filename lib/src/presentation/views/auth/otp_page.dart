@@ -78,7 +78,10 @@ class _OTPPageState extends State<OTPPage> {
                       style: TextStyle(fontSize: 14)),
                   TextSpan(
                     text: "Resend",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 14,
+                        color: themeNavy),
                     recognizer: TapGestureRecognizer()
                       ..onTap = () async {
                         // print("PHONE NUMBER ? ${widget.phoneNumber}");
@@ -129,7 +132,7 @@ class _OTPPageState extends State<OTPPage> {
                           fontWeight: FontWeight.w600),
                     ),
                     style: OutlinedButton.styleFrom(
-                        backgroundColor: themeOrangeBg,
+                        backgroundColor: themeRedButton,
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(30)),
                         padding: EdgeInsets.symmetric(vertical: 12)),
@@ -201,7 +204,7 @@ class _OTPPageState extends State<OTPPage> {
                           Navigator.pop(context, true);
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: themeOrangeBg,
+                          backgroundColor: themeRedButton,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:

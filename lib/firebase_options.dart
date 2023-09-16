@@ -26,10 +26,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -54,9 +51,19 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDOE0MgtZt1ueVyvE7KcrlWsWXMHgLqZlI',
-    appId: '1:420400641953:android:0bf8f6dd4d669a2638bde0',
+    appId: '1:420400641953:android:61f499ce5a3590ed38bde0',
     messagingSenderId: '420400641953',
     projectId: 'becca-apps',
     storageBucket: 'becca-apps.appspot.com',
+  );
+
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyCeM3oOBKbDafUcXCQy6_4XZqfeEatJfy0',
+    appId: '1:420400641953:ios:78e142728467959338bde0',
+    messagingSenderId: '420400641953',
+    projectId: 'becca-apps',
+    storageBucket: 'becca-apps.appspot.com',
+    iosClientId: '420400641953-ts630dv52sr57j6e65mf50mcri4j57hb.apps.googleusercontent.com',
+    iosBundleId: 'com.qqltech.beccaSales',
   );
 }

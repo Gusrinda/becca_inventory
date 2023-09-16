@@ -10,7 +10,6 @@ const double defaultBorderRadius = 8.0;
 const Color fontColorThin = Color(0xFF8F8F8F);
 const Color fontColorBold = Color(0xFF0A0A0A);
 
-
 const Color themeScaffold = Color(0xFFFFFFFF);
 const Color themeFontDefault = Color(0xFF0A0A0A);
 const Color themeFontLight = Color(0xFF616161);
@@ -26,8 +25,11 @@ const Color themeBrown = Color(0xFFDAA200);
 
 const Color themeBgCard = Color(0xFFF0F5FF);
 
-
 const Color themeRed = Color(0xFFE90019);
+const Color themeRed2 = Color(0xFFD42C17);
+const Color themeHintRed = Color(0xFFF38476);
+const Color themeIconRed = Color(0xFFFF7A69);
+const Color themeRedButton = Color(0xFFE75C4A);
 // const Color themeOrange = Color(0xFFFF6618);
 const Color themeGreen = Color(0xFF00AA13);
 const Color themeBlack = Color(0xFF000000);
