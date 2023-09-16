@@ -291,7 +291,7 @@ extension MyBuildContext on BuildContext {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20)
                           ),
-                          backgroundColor: themeOrange),
+                          backgroundColor: themeRed),
                       child: Text(positiveButton),
                       onPressed: () {
                         Navigator.pop(this, true);

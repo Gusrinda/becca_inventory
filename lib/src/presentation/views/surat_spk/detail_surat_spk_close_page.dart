@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:becca_supir/src/core/config/constant.dart';
 import 'package:becca_supir/src/presentation/views/absensi/absensi_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/submitrespon.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/assets/assets.gen.dart';
@@ -17,12 +18,26 @@ class DetailSuratJalanClose extends StatefulWidget {
 }
 
 class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
+  int statePage = 0;
+
+  @override
+  void initState() {
+    super.initState();
+    statePage = 0;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Detail SPK"),
+        title: GestureDetector(
+            onTap: () async {
+              setState(() {
+                statePage = 0;
+              });
+            },
+            child: const Text("Detail SPK")),
       ),
       body: Container(
         child: Column(
@@ -102,10 +117,16 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
             Expanded(
               flex: 1,
               child: ListView.builder(
-                  shrinkWrap: true, //MUST TO ADDED
-                  //MUST TO ADDED
+                  shrinkWrap: true,
                   itemCount: 6,
                   itemBuilder: (BuildContext c, int index) {
+                    if (statePage > 0) {
+                      if (index == 0) {
+                        return CardListWrong(index: index * 1 + 1);
+                      } else {
+                        return CardListCorrect(index: index * 1 + 1);
+                      }
+                    }
                     return CardListDO(
                       index: index * 1 + 1,
                     );
@@ -115,13 +136,42 @@ class _DetailSuratJalanCloseState extends State<DetailSuratJalanClose> {
               child: SafeArea(
                 minimum: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                 child: Container(
-                  height: 40,
-                  width: 300,
+                  margin: EdgeInsets.symmetric(horizontal: 20),
+                  width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
                     onPressed: () async {
                       bool? result = await handleFormSubmit(context);
                       if (result != null && result) {
-                        Navigator.pop(context);
+                        print('STATE PAGE ${statePage}');
+
+                        if (statePage == 0) {
+                          showDialog(
+                            context: context,
+                            builder: (context) => DitolakPertama(),
+                          );
+                        }
+
+                        if (statePage == 1) {
+                          showDialog(
+                            context: context,
+                            builder: (context) => DitolakTerakhir(),
+                          );
+                        }
+
+                        if (statePage == 2) {
+                          await showDialog(
+                            context: context,
+                            builder: (context) => Diterima(),
+                          );
+
+                          Navigator.pop(context);
+                        }
+
+                        setState(() {
+                          statePage += 1;
+                        });
+
+                        // Navigator.pop(context);
                       }
                     },
                     style: ElevatedButton.styleFrom(

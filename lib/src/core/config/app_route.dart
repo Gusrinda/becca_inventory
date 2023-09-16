@@ -15,11 +15,6 @@ import 'package:becca_supir/src/presentation/views/home/dashboard.dart';
 import 'package:becca_supir/src/presentation/views/home/dashboard.dart';
 import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
 import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -75,18 +70,11 @@ class AppRoute {
         final isCheckin = settings.arguments as bool;
         builder = (context) =>  AbsensiPage(isCheckIn: isCheckin);
         break;
-      case DetailSuratJalanIn.routeName:
-        builder = (context) => const DetailSuratJalanIn();
-        break;
-      case DetailSuratJalanOut.routeName:
-        builder = (context) => const DetailSuratJalanOut();
-        break;
+
       case DetailSuratJalanClose.routeName:
         builder = (context) => const DetailSuratJalanClose();
         break;
-      case ListSuratJalan.routeName:
-        builder = (context) => const ListSuratJalan();
-        break;
+
       case DaftarDOPage.routeName:
         builder = (context) => const DaftarDOPage();
         break;

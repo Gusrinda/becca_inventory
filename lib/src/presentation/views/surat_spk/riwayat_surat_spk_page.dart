@@ -1,5 +1,4 @@
 import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -18,37 +17,14 @@ class SuratJalanPage extends StatefulWidget {
 }
 
 class _SuratJalanPageState extends State<SuratJalanPage> {
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text("List SPK"),
         centerTitle: false,
-        // actions: [
-        //   Padding(
-        //     padding: const EdgeInsets.symmetric(vertical: 10),
-        //     child: InkWell(
-        //       onTap: () async {
-        //         final filterBy = await HandleShowModalForm();
-
-        //         print("FILTER BY => $filterBy");
-        //       },
-        //       child: ClipRRect(
-        //           borderRadius: BorderRadius.circular(60),
-        //           child: Container(
-        //               width: 36,
-        //               height: 36,
-        //               color: themeOrangeBg,
-        //               child: Icon(
-        //                 CupertinoIcons.sort_up,
-        //                 color: Colors.white,
-        //               ))),
-        //     ),
-        //   ),
-        //   SizedBox(
-        //     width: 20,
-        //   )
-        // ],
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

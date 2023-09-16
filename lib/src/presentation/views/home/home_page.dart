@@ -3,8 +3,6 @@ import 'package:becca_supir/src/core/config/theme_colors.dart';
 import 'package:becca_supir/src/presentation/views/absensi/absensi_page.dart';
 import 'package:becca_supir/src/presentation/views/delivery_order/daftar_do_page.dart';
 import 'package:becca_supir/src/presentation/views/home/custom_bottom_sheet.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

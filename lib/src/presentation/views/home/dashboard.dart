@@ -48,6 +48,12 @@ class _DashboardPageState extends State<DashboardPage> {
   }
 
   @override
+  void dispose() {
+    pageSelectController.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: _body(),

@@ -1,5 +1,4 @@
 import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -127,11 +126,7 @@ class CardListNotification extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(
-            context,
-            !isAlreadyRead
-                ? DetailSuratJalanIn.routeName
-                : DetailSuratJalanClose.routeName);
+        Navigator.pushNamed(context, DetailSuratJalanClose.routeName);
       },
       child: Container(
         margin: EdgeInsets.only(bottom: 12),

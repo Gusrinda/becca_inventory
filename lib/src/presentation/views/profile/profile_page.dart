@@ -28,7 +28,7 @@ class _ProfilePageState extends State<ProfilePage> {
         children: [
           Container(
             decoration: BoxDecoration(
-              color: themeOrangeBg,
+              color: themeRed,
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: AssetImage(Assets.images.bgOrangeInv.path),
