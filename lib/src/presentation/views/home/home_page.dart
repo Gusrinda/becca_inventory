@@ -3,8 +3,8 @@ import 'package:becca_supir/src/core/config/theme_colors.dart';
 import 'package:becca_supir/src/presentation/views/absensi/absensi_page.dart';
 import 'package:becca_supir/src/presentation/views/delivery_order/daftar_do_page.dart';
 import 'package:becca_supir/src/presentation/views/home/custom_bottom_sheet.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/list_surat_jalan_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -14,7 +14,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 
 import '../../../core/assets/assets.gen.dart';
 import '../../widgets/text_field_widget.dart';
-import '../surat_jalan/detail_surat_jalan_close_page.dart';
+import '../surat_spk/detail_surat_spk_close_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

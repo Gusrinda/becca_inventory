@@ -1,26 +1,30 @@
 name: becca_supir
 description: Projek Supir Untuk Becca
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.0.0 <4.0.0'
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
-  cupertino_icons: ^1.0.5
   badges: ^3.0.2
   bloc: ^8.1.0
+  carousel_slider: ^4.2.1
   change_app_package_name: ^1.1.0
   country_icons: ^2.0.2
+  cupertino_icons: ^1.0.5
+  currency_text_input_formatter: ^2.1.10
   dio: ^4.0.6
   dio_flutter_transformer:
     git:
       url: https://github.com/alann-maulana/dio_flutter_transformer
       ref: feature/null-safety
   dotted_border: ^2.0.0+2
+  dynamic_height_grid_view: ^0.0.3
   equatable: ^2.0.5
+  expandable: ^5.0.1
   firebase_core: ^2.7.0
   firebase_messaging: ^14.2.5
   flimer:
@@ -31,10 +35,12 @@ dependencies:
     sdk: flutter
   flutter_bloc: ^8.1.1
   flutter_cache_manager: ^3.3.0
+  flutter_easyloading: ^3.0.5
   flutter_hud:
     git:
       url: https://github.com/alann-maulana/flutter_hud
       ref: master
+  flutter_launcher_icons: ^0.13.1
   flutter_linkify: ^6.0.0
   flutter_localizations:
     sdk: flutter
@@ -42,7 +48,9 @@ dependencies:
   flutter_otp_text_field: ^1.1.0+2
   flutter_rating_bar: ^4.0.1
   flutter_screenutil: ^5.7.0
+  flutter_slidable: ^3.0.0
   flutter_svg: ^2.0.7
+  font_awesome_flutter: ^10.5.0
   formz: ^0.4.1
   freezed_annotation: ^2.1.0
   geocoding: ^2.1.0
@@ -59,29 +67,19 @@ dependencies:
   month_year_picker: ^0.3.0+1
   open_file_plus: ^3.4.1
   path_provider: ^2.0.11
+  percent_indicator: ^4.2.3
   permission_handler: ^10.2.0
   pin_code_fields: ^8.0.1
   pretty_dio_logger: ^1.2.0-beta-1
   provider: ^6.0.3
   qr_flutter: ^4.0.0
   retrofit: ^3.0.1+1
+  simple_ripple_animation: ^0.0.7
   syncfusion_flutter_charts: ^22.1.38
   syncfusion_flutter_datepicker: ^22.1.38
+
   timelines: ^0.1.0
   url_launcher: ^6.1.7
-  percent_indicator: ^4.2.3
-  carousel_slider: ^4.2.1
-  dynamic_height_grid_view: ^0.0.3
-  flutter_slidable: ^3.0.0
-  currency_text_input_formatter: ^2.1.10
-  font_awesome_flutter: ^10.5.0
-  flutter_launcher_icons: ^0.13.1
-  simple_ripple_animation: ^0.0.7
-  expandable: ^5.0.1
-  flutter_easyloading: ^3.0.5
-#  test_api: ^0.5.1
-#  flutter_local_notifications: ^15.1.0+1
-
 
 flutter_launcher_icons:
   android: "launcher_icon"
@@ -90,8 +88,6 @@ flutter_launcher_icons:
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 dev_dependencies:
-  flutter_test:
-    sdk: flutter
   build_runner: ^2.2.0
   flutter_gen_runner: ^5.2.0
   flutter_lints: ^2.0.0
@@ -99,70 +95,35 @@ dev_dependencies:
   json_serializable: ^6.3.1
   retrofit_generator: ^4.0.1
 
-dependency_overrides:
-  test_api: ^0.5.1
-
-
 flutter:
   uses-material-design: true
   # generate: true
   assets:
-  - assets/icons/
-  - assets/images/
-  - assets/material/
+    - assets/icons/
+    - assets/images/
+    - assets/material/
 
 flutter_gen:
   output: lib/src/core/assets
 
 fonts:
-- family: Poppins
-  fonts:
-  - asset: fonts/Poppins-Thin.ttf
-    weight: 100
-  - asset: fonts/Poppins-ExtraLight.ttf
-    weight: 200
-  - asset: fonts/Poppins-Light.ttf
-    weight: 300
-  - asset: fonts/Poppins-Regular.ttf
-    weight: 400
-  - asset: fonts/Poppins-Medium.ttf
-    weight: 500
-  - asset: fonts/Poppins-SemiBold.ttf
-    weight: 600
-  - asset: fonts/Poppins-Bold.ttf
-    weight: 700
-  - asset: fonts/Poppins-ExtraBold.ttf
-    weight: 800
-  - asset: fonts/Poppins-Black.ttf
-    weight: 900
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  - family: Poppins
+    fonts:
+      - asset: fonts/Poppins-Thin.ttf
+        weight: 100
+      - asset: fonts/Poppins-ExtraLight.ttf
+        weight: 200
+      - asset: fonts/Poppins-Light.ttf
+        weight: 300
+      - asset: fonts/Poppins-Regular.ttf
+        weight: 400
+      - asset: fonts/Poppins-Medium.ttf
+        weight: 500
+      - asset: fonts/Poppins-SemiBold.ttf
+        weight: 600
+      - asset: fonts/Poppins-Bold.ttf
+        weight: 700
+      - asset: fonts/Poppins-ExtraBold.ttf
+        weight: 800
+      - asset: fonts/Poppins-Black.ttf
+        weight: 900

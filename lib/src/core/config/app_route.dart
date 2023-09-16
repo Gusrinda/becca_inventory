@@ -13,13 +13,13 @@ import 'package:becca_supir/src/presentation/views/delivery_order/result_confirm
 import 'package:becca_supir/src/presentation/views/delivery_order/result_confirm_do_page.dart';
 import 'package:becca_supir/src/presentation/views/home/dashboard.dart';
 import 'package:becca_supir/src/presentation/views/home/dashboard.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_close_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_in_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/list_surat_jalan_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/list_surat_jalan_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_close_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/list_surat_spk.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

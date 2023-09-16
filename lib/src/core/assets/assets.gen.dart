@@ -376,6 +376,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/BgOrangeInv.png
+  AssetGenImage get bgOrangeInv =>
+      const AssetGenImage('assets/images/BgOrangeInv.png');
+
   /// File path: assets/images/Login.png
   AssetGenImage get login => const AssetGenImage('assets/images/Login.png');
 
@@ -405,6 +409,18 @@ class $AssetsImagesGen {
   /// File path: assets/images/confirmation.png
   AssetGenImage get confirmation =>
       const AssetGenImage('assets/images/confirmation.png');
+
+  /// File path: assets/images/confirmation2.png
+  AssetGenImage get confirmation2 =>
+      const AssetGenImage('assets/images/confirmation2.png');
+
+  /// File path: assets/images/diterima1.png
+  AssetGenImage get diterima1 =>
+      const AssetGenImage('assets/images/diterima1.png');
+
+  /// File path: assets/images/ditolak1.png
+  AssetGenImage get ditolak1 =>
+      const AssetGenImage('assets/images/ditolak1.png');
 
   /// File path: assets/images/image_card.png
   AssetGenImage get imageCard =>
@@ -490,6 +506,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+        bgOrangeInv,
         login,
         whatsAppImage20230415At095731,
         addProduk,
@@ -498,6 +515,9 @@ class $AssetsImagesGen {
         bgMerah,
         bgOrange,
         confirmation,
+        confirmation2,
+        diterima1,
+        ditolak1,
         imageCard,
         konfirmasi,
         logoBecca,
@@ -531,14 +551,32 @@ class $AssetsMaterialGen {
   /// File path: assets/material/Box.svg
   String get box => 'assets/material/Box.svg';
 
+  /// File path: assets/material/Camera.svg
+  String get camera => 'assets/material/Camera.svg';
+
   /// File path: assets/material/Done.svg
   String get done => 'assets/material/Done.svg';
+
+  /// File path: assets/material/EditInv.svg
+  String get editInv => 'assets/material/EditInv.svg';
 
   /// File path: assets/material/Form.svg
   String get form => 'assets/material/Form.svg';
 
   /// File path: assets/material/History.svg
   String get history => 'assets/material/History.svg';
+
+  /// File path: assets/material/LockInv.svg
+  String get lockInv => 'assets/material/LockInv.svg';
+
+  /// File path: assets/material/LogoutInv.svg
+  String get logoutInv => 'assets/material/LogoutInv.svg';
+
+  /// File path: assets/material/MessageInv.svg
+  String get messageInv => 'assets/material/MessageInv.svg';
+
+  /// File path: assets/material/PhoneInv.svg
+  String get phoneInv => 'assets/material/PhoneInv.svg';
 
   /// File path: assets/material/PngItem_4931911 1.svg
   String get pngItem49319111 => 'assets/material/PngItem_4931911 1.svg';
@@ -551,6 +589,9 @@ class $AssetsMaterialGen {
 
   /// File path: assets/material/Sign_out_squre.svg
   String get signOutSqure => 'assets/material/Sign_out_squre.svg';
+
+  /// File path: assets/material/UserInv.svg
+  String get userInv => 'assets/material/UserInv.svg';
 
   /// File path: assets/material/arrow-back.svg
   String get arrowBack => 'assets/material/arrow-back.svg';
@@ -601,13 +642,20 @@ class $AssetsMaterialGen {
   List<String> get values => [
         bell,
         box,
+        camera,
         done,
+        editInv,
         form,
         history,
+        lockInv,
+        logoutInv,
+        messageInv,
+        phoneInv,
         pngItem49319111,
         process,
         signInSqureFill,
         signOutSqure,
+        userInv,
         arrowBack,
         circleWhite,
         cirleOrange,

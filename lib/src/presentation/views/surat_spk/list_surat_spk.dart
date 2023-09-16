@@ -1,6 +1,6 @@
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_in_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/detail_surat_jalan_out_page.dart';
-import 'package:becca_supir/src/presentation/views/surat_jalan/riwayat_surat_jalan_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_in_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/detail_surat_spk_out_page.dart';
+import 'package:becca_supir/src/presentation/views/surat_spk/riwayat_surat_spk_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -68,7 +68,7 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
             child: Text(
               "Semua",
               style:
-              TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.w600),
             ),
           ),
           SizedBox(
@@ -83,14 +83,13 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
                   return CardListSuratJalan(
                     index: index * 2 + 1,
                     onTap: () {
-
                       if (index.isOdd) {
-                        Navigator.pushNamed(context, DetailSuratJalanOut.routeName);
-                      }  else {
-                        Navigator.pushNamed(context, DetailSuratJalanIn.routeName);
+                        Navigator.pushNamed(
+                            context, DetailSuratJalanOut.routeName);
+                      } else {
+                        Navigator.pushNamed(
+                            context, DetailSuratJalanIn.routeName);
                       }
-
-
                     },
                   );
                 }),
@@ -107,8 +106,8 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
       context: context,
       shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
-            top: Radius.circular(20),
-          )),
+        top: Radius.circular(20),
+      )),
       builder: (BuildContext context) {
         return Container(
           padding: const EdgeInsets.symmetric(horizontal: 50),
@@ -204,5 +203,4 @@ class _ListSuratJalanState extends State<ListSuratJalan> {
       },
     );
   }
-
 }

@@ -142,7 +142,8 @@ class _DetailSuratJalanInState extends State<DetailSuratJalanIn> {
 
                     if (isOke != null) {
                       if (isOke) {
-                        Navigator.popAndPushNamed(context, AbsensiPage.routeName,
+                        Navigator.popAndPushNamed(
+                            context, AbsensiPage.routeName,
                             arguments: true);
                       }
                     }
@@ -167,7 +168,6 @@ class _DetailSuratJalanInState extends State<DetailSuratJalanIn> {
           ],
         ),
       ),
-
     );
   }
 
@@ -211,7 +211,7 @@ class _DetailSuratJalanInState extends State<DetailSuratJalanIn> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                           backgroundColor: ThemeColors.neutral4,
                         ),
                         child: Padding(
@@ -237,7 +237,7 @@ class _DetailSuratJalanInState extends State<DetailSuratJalanIn> {
                           elevation: 0,
                           shape: RoundedRectangleBorder(
                               borderRadius:
-                              BorderRadius.all(Radius.circular(20))),
+                                  BorderRadius.all(Radius.circular(20))),
                         ),
                         child: Padding(
                           padding: const EdgeInsets.all(16),
@@ -258,7 +258,6 @@ class _DetailSuratJalanInState extends State<DetailSuratJalanIn> {
       },
     );
   }
-
 }
 
 class CardListDO extends StatelessWidget {
@@ -292,8 +291,7 @@ class CardListDO extends StatelessWidget {
             padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
-                color: Color(0xFFF5F5F5)
-            ),
+                color: Color(0xFFF5F5F5)),
             child: Row(
               children: [
                 Expanded(
@@ -395,5 +393,4 @@ class CardListItemDO extends StatelessWidget {
       ),
     );
   }
-
 }
